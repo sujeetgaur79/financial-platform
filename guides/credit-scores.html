@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Scores & Financial Health: The Complete FICO Playbook | WealthPulse</title>
+    <meta name="description" content="Master your credit score: deep dive into the 5 FICO levers, the statement date vs due date utilization secret, the AZEO method, and goodwill deletion letters.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Newsreader', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .font-serif-heading { font-family: 'Newsreader', Georgia, serif; }
+        #reading-progress { transition: width 0.1s ease-out; }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased min-h-screen selection:bg-blue-100 selection:text-blue-900">
+
+    <div class="fixed top-0 left-0 w-full h-1 bg-slate-100 z-50">
+        <div id="reading-progress" class="h-full bg-purple-600 w-0"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="border-b border-slate-200/80 bg-white/95 backdrop-blur-md sticky top-0 z-40">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="../index.html" class="flex items-center gap-2.5 group">
+                    <div class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center p-1 shadow-sm group-hover:scale-105 transition transform">
+                        <svg viewBox="0 0 64 64" fill="none" class="w-full h-full">
+                            <rect x="12" y="36" width="6" height="16" rx="3" fill="#2563eb" fill-opacity="0.3"/>
+                            <rect x="22" y="28" width="6" height="24" rx="3" fill="#2563eb" fill-opacity="0.5"/>
+                            <rect x="32" y="20" width="6" height="32" rx="3" fill="#2563eb" fill-opacity="0.7"/>
+                            <rect x="42" y="14" width="6" height="38" rx="3" fill="#059669" fill-opacity="0.9"/>
+                            <path d="M10 38 L20 38 L26 22 L32 46 L38 28 L44 38 L54 38" stroke="#10b981" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="text-lg font-black tracking-tight text-slate-900 hidden sm:inline">Wealth<span class="text-blue-600">Pulse</span></span>
+                </a>
+                <span class="text-slate-300 hidden sm:inline">/</span>
+                <a href="../index.html#categories" class="text-xs font-semibold text-slate-500 hover:text-purple-600 flex items-center gap-1">
+                    <i data-lucide="arrow-left" class="w-3.5 h-3.5 text-purple-600"></i>
+                    <span>All Guides</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-xs font-semibold text-purple-700 bg-purple-50 px-3 py-1 rounded-full border border-purple-200/60">
+                    Comprehensive Masterclass • 15 min read
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 lg:grid lg:grid-cols-12 lg:gap-10">
+
+        <!-- Sidebar TOC with Ad Placement 3 (Desktop) -->
+        <aside class="hidden lg:block lg:col-span-4 sticky top-24 self-start space-y-6">
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-purple-600 mb-4 flex items-center gap-2">
+                    <i data-lucide="list" class="w-4 h-4"></i>
+                    <span>Table of Contents</span>
+                </h4>
+                <nav class="space-y-2 text-xs font-medium text-slate-600">
+                    <a href="#intro" class="block hover:text-purple-600 py-1 transition">1. The FICO Metric Explained</a>
+                    <a href="#five-pillars" class="block hover:text-purple-600 py-1 transition">2. The 5 Pillars of Your Score</a>
+                    <a href="#utilization-secret" class="block hover:text-purple-600 py-1 transition">3. Statement vs. Due Date Secret</a>
+                    <a href="#azeo-method" class="block hover:text-purple-600 py-1 transition">4. The AZEO Optimization Method</a>
+                    <a href="#repair-playbook" class="block hover:text-purple-600 py-1 transition">5. Dispute & Goodwill Playbook</a>
+                    <a href="#myths-busted" class="block hover:text-purple-600 py-1 transition">6. 5 Common Credit Myths Busted</a>
+                    <a href="#faq" class="block hover:text-purple-600 py-1 transition">7. Frequently Asked Questions</a>
+                </nav>
+            </div>
+
+            <!-- AD PLACEMENT 3: Sidebar Medium Rectangle (300x250) -->
+            <div id="credit-ad-slot-sidebar" class="ad-placement-container my-6 w-full">
+                <div class="p-3 bg-slate-50 border border-slate-200/80 rounded-2xl text-center shadow-2xs">
+                    <span class="block text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1.5">Advertisement</span>
+                    <div class="ad-slot-placeholder w-full min-h-[250px] flex flex-col items-center justify-center border border-dashed border-slate-300 rounded-xl bg-white/70 text-slate-400 text-xs p-4">
+                        <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-400 flex items-center justify-center mb-2">
+                            <i data-lucide="square" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-slate-600">Sidebar Ad Unit (300x250)</span>
+                        <span class="text-[10px] text-slate-400 mt-0.5">Google AdSense Ready • ID: credit-sidebar</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-purple-50/60 border border-purple-200/80 text-center shadow-2xs">
+                <span class="text-xs font-bold text-purple-900 block mb-1">Check Your Financial Health</span>
+                <p class="text-[11px] text-slate-600 mb-3">Take our 60-second diagnostic to benchmark your financial habits.</p>
+                <a href="../index.html#quiz-section" class="inline-block px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl text-xs transition shadow-2xs">
+                    Take Health Quiz
+                </a>
+            </div>
+        </aside>
+
+        <!-- Article Body -->
+        <article class="lg:col-span-8 space-y-10">
+
+            <section id="intro">
+                <div class="flex items-center gap-3 text-xs text-slate-400 mb-3">
+                    <span class="font-semibold text-purple-600">Credit Health & Lending</span>
+                    <span>•</span>
+                    <span>Updated November 2026</span>
+                    <span>•</span>
+                    <span>FICO & VantageScore Mechanics</span>
+                </div>
+                <h1 class="font-serif-heading text-3xl sm:text-4xl md:text-5xl font-normal text-slate-900 tracking-tight leading-tight mb-6">
+                    Credit Scores & Financial Health: The Complete Practical FICO Playbook
+                </h1>
+                <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+                    A three-digit credit score (ranging from 300 to 850) exerts an outsized influence on your financial life. It determines whether you qualify for a mortgage, what interest rate you are offered on auto financing, your premium rates for homeowner and car insurance, and even whether a landlord will accept your apartment lease application.
+                </p>
+                <p class="text-sm sm:text-base text-slate-700 leading-relaxed pt-3 mb-6">
+                    Yet millions of consumers navigate their financial lives believing pervasive myths—such as believing you must carry a monthly credit card balance to build credit. This comprehensive guide lifts the veil on the mathematical algorithms behind the FICO score and provides exact, step-by-step tactics to optimize yours.
+                </p>
+
+                <!-- Author Profile & Social Share Bar -->
+                <div class="flex flex-wrap items-center justify-between gap-4 py-4 border-y border-slate-200 text-xs">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center p-1.5 shrink-0 shadow-xs">
+                            <svg viewBox="0 0 64 64" fill="none" class="w-full h-full">
+                                <rect x="12" y="36" width="6" height="16" rx="3" fill="#2563eb" fill-opacity="0.3"/>
+                                <rect x="22" y="28" width="6" height="24" rx="3" fill="#2563eb" fill-opacity="0.5"/>
+                                <rect x="32" y="20" width="6" height="32" rx="3" fill="#2563eb" fill-opacity="0.7"/>
+                                <rect x="42" y="14" width="6" height="38" rx="3" fill="#059669" fill-opacity="0.9"/>
+                                <path d="M10 38 L20 38 L26 22 L32 46 L38 28 L44 38 L54 38" stroke="#10b981" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-bold text-slate-900">WealthPulse Editorial Research Desk</div>
+                            <div class="text-[11px] text-slate-500">Credit Reporting & Underwriting Unit • Verified Against FCRA Standards</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[11px] font-semibold text-slate-400 mr-1">Share:</span>
+                        <a href="https://twitter.com/intent/tweet?text=Credit%20Scores%20%26%20Financial%20Health%3A%20The%20FICO%20Playbook&url=https%3A%2F%2Fwealthpulse.app%2Fguides%2Fcredit-scores.html" target="_blank" rel="noopener noreferrer" class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-600 hover:text-blue-500 hover:border-blue-300 transition" title="Share on X / Twitter">
+                            <i data-lucide="twitter" class="w-3.5 h-3.5"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwealthpulse.app%2Fguides%2Fcredit-scores.html" target="_blank" rel="noopener noreferrer" class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-600 hover:text-blue-700 hover:border-blue-300 transition" title="Share on LinkedIn">
+                            <i data-lucide="linkedin" class="w-3.5 h-3.5"></i>
+                        </a>
+                        <button onclick="navigator.clipboard.writeText(window.location.href); alert('Article URL copied to clipboard!');" class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-600 hover:text-emerald-600 hover:border-emerald-300 transition flex items-center gap-1" title="Copy Link">
+                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                            <span class="text-[11px] font-medium hidden sm:inline">Copy</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AD PLACEMENT 1: Top Banner (728x90) -->
+            <div id="credit-ad-slot-top-banner" class="ad-placement-container my-8 w-full">
+                <div class="max-w-[728px] mx-auto p-3 bg-slate-50 border border-slate-200/80 rounded-2xl text-center shadow-2xs">
+                    <span class="block text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1.5">Advertisement</span>
+                    <div class="ad-slot-placeholder w-full min-h-[90px] flex flex-col items-center justify-center border border-dashed border-slate-300 rounded-xl bg-white/70 text-slate-400 text-xs py-3 px-4">
+                        <div class="flex items-center gap-2 text-slate-600 font-semibold text-xs">
+                            <i data-lucide="layout" class="w-4 h-4 text-slate-400"></i>
+                            <span>Top Leaderboard Banner (728x90)</span>
+                        </div>
+                        <span class="text-[10px] text-slate-400 mt-0.5">Google AdSense Ready • ID: credit-top-banner</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Takeaway Box -->
+            <div class="p-6 rounded-2xl bg-purple-50/70 border-l-4 border-purple-600 shadow-2xs">
+                <h4 class="text-sm font-bold text-purple-900 uppercase tracking-wider mb-2">Fundamental Truth: Credit Scores Do Not Measure Wealth</h4>
+                <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    A multi-millionaire with zero open credit accounts can have an unscoreable credit file, while someone earning $35,000 who manages two cards responsibly can boast a pristine 810 credit score. Your credit score is not a measurement of your bank balance or income; it is exclusively a measurement of <strong>how reliably you handle borrowed capital</strong>.
+                </p>
+            </div>
+
+            <!-- The 5 Pillars of FICO -->
+            <section id="five-pillars" class="space-y-6 pt-6 border-t border-slate-200">
+                <h2 class="text-2xl font-bold text-slate-900">The 5 Pillars of the FICO Algorithm</h2>
+
+                <div class="space-y-4">
+                    <!-- Pillar 1 -->
+                    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-200/60">Pillar 1: 35% Weight</span>
+                            <span class="text-xs font-bold text-emerald-700">The Ultimate Lever</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Payment History</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Lenders care most about whether you repay obligations on time. A single 30-day late payment can drop an 780 score by <strong>60 to 110 points instantly</strong>. Delinquencies remain on your credit report for up to 7 years under the Fair Credit Reporting Act (FCRA), although their mathematical impact decays significantly after 24 months of subsequent flawless on-time payments.
+                        </p>
+                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 text-xs text-slate-600">
+                            <strong>Tactical Rule:</strong> Set up automated payments for the minimum amount due on every account. Even if you manually pay in full later, this autopay backstop guarantees a missed deadline can never inflict a 30-day delinquency mark.
+                        </div>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-50 text-blue-700 border border-blue-200/60">Pillar 2: 30% Weight</span>
+                            <span class="text-xs font-bold text-blue-700">Rapidly Manipulable</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Credit Utilization Ratio (Amounts Owed)</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Calculated by dividing your outstanding balances by your total available credit limit ($Balance \div Limit$). Utilization is calculated both on an <strong>aggregate level</strong> (total of all cards) and on an <strong>individual card level</strong>. For instance, holding a $2,900 balance on a card with a $3,000 limit represents 97% utilization—heavily penalizing your score even if your total limit across all other cards is $50,000.
+                        </p>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-50 text-amber-700 border border-amber-200/60">Pillar 3: 15% Weight</span>
+                            <span class="text-xs font-bold text-amber-700">Time-Tested Trust</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Length of Credit History</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            FICO evaluates the age of your oldest trade-line, the age of your newest account, and the <strong>Average Age of Accounts (AAoA)</strong>. Opening five new credit cards in a single year slashes your AAoA in half, causing an immediate score contraction.
+                        </p>
+                    </div>
+
+                    <!-- Pillar 4 & 5 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                            <span class="text-xs font-bold uppercase text-slate-400">Pillar 4: 10% Weight</span>
+                            <h4 class="text-base font-bold text-slate-900">Credit Mix</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Demonstrates ability to juggle multiple financing structures: revolving lines (credit cards) combined with installment loans (mortgages, auto notes, student loans).
+                            </p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                            <span class="text-xs font-bold uppercase text-slate-400">Pillar 5: 10% Weight</span>
+                            <h4 class="text-base font-bold text-slate-900">New Credit & Inquiries</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Hard inquiries from new credit applications stay on your report for 2 years but only impact FICO calculations for 12 months (typically deducting 2 to 5 points per inquiry).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AD PLACEMENT 2: In-Article 1 -->
+            <div id="credit-ad-slot-in-article-1" class="ad-placement-container my-8 w-full">
+                <div class="p-3 bg-slate-50 border border-slate-200/80 rounded-2xl text-center shadow-2xs">
+                    <span class="block text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1.5">Advertisement</span>
+                    <div class="ad-slot-placeholder w-full min-h-[120px] flex flex-col items-center justify-center border border-dashed border-slate-300 rounded-xl bg-white/70 text-slate-400 text-xs py-4 px-4">
+                        <div class="flex items-center gap-2 text-slate-600 font-semibold text-xs">
+                            <i data-lucide="newspaper" class="w-4 h-4 text-slate-400"></i>
+                            <span>In-Article Native Ad Unit</span>
+                        </div>
+                        <span class="text-[10px] text-slate-400 mt-0.5">Google AdSense Ready • ID: credit-in-article-1</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statement Date vs Due Date -->
+            <section id="utilization-secret" class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm space-y-4">
+                <h3 class="text-xl font-bold text-slate-900">The Statement Date vs. Due Date Secret</h3>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Most consumers pay their credit card balance on the <strong>Payment Due Date</strong>, assuming the credit bureaus register a zero balance. This is fundamentally mistaken.
+                </p>
+                <div class="p-4 rounded-xl bg-white border border-slate-200 text-xs text-slate-700 space-y-2 leading-relaxed">
+                    <strong class="text-purple-900 block">How Reporting Actually Operates:</strong>
+                    Card issuers report your balance to the bureaus on your <strong>Statement Closing Date</strong> (the day your monthly PDF statement generates), which is typically 21 to 25 days BEFORE your payment due date. 
+                    <br><br>
+                    If you run up $2,500 on a $3,000 limit, that 83% utilization ratio is photographed and sent to Experian, TransUnion, and Equifax on the statement closing date. Even if you pay the entire $2,500 on the due date three weeks later, your credit score suffers for the entire month!
+                    <br><br>
+                    <strong>The Solution:</strong> Pay your balance down to under $50 three days <em>before</em> the Statement Closing Date. The issuer reports a microscopic 1% utilization, skyrocketing your score.
+                </div>
+            </section>
+
+            <!-- AD PLACEMENT 4: In-Article 2 -->
+            <div id="credit-ad-slot-in-article-2" class="ad-placement-container my-8 w-full">
+                <div class="p-3 bg-slate-50 border border-slate-200/80 rounded-2xl text-center shadow-2xs">
+                    <span class="block text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1.5">Advertisement</span>
+                    <div class="ad-slot-placeholder w-full min-h-[120px] flex flex-col items-center justify-center border border-dashed border-slate-300 rounded-xl bg-white/70 text-slate-400 text-xs py-4 px-4">
+                        <div class="flex items-center gap-2 text-slate-600 font-semibold text-xs">
+                            <i data-lucide="newspaper" class="w-4 h-4 text-slate-400"></i>
+                            <span>Mid-Article Responsive Ad Unit</span>
+                        </div>
+                        <span class="text-[10px] text-slate-400 mt-0.5">Google AdSense Ready • ID: credit-in-article-2</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The AZEO Method -->
+            <section id="azeo-method" class="space-y-4 pt-6 border-t border-slate-200">
+                <h2 class="text-2xl font-bold text-slate-900">The AZEO Method ("All Zero Except One")</h2>
+                <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+                    When preparing for a major borrowing milestone (such as a 30-year fixed mortgage where a 20-point credit difference saves tens of thousands in interest), credit experts execute the <strong>AZEO Method</strong>:
+                </p>
+                <div class="p-5 rounded-2xl bg-white border border-slate-200 text-xs sm:text-sm text-slate-700 space-y-2">
+                    <ol class="list-decimal pl-5 space-y-2 leading-relaxed">
+                        <li>Pay every single revolving credit card down to a <strong>$0.00 statement balance</strong> prior to statement generation dates.</li>
+                        <li>On exactly <strong>ONE primary credit card</strong>, allow a tiny balance between $10 and $20 (under 1% of that card's limit) to report on its statement.</li>
+                        <li>Pay that remaining $15 balance in full immediately after the statement generates.</li>
+                    </ol>
+                    <p class="text-[11px] text-slate-500 pt-2">
+                        <em>Why not 0% across every card?</em> Because FICO algorithms penalize files with 100% zero utilization across all revolving trade-lines under a "no recent revolving usage" penalty. AZEO unlocks the highest mathematical tier of utilization scoring.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Dispute & Goodwill Playbook -->
+            <section id="repair-playbook" class="space-y-6 pt-6 border-t border-slate-200">
+                <h2 class="text-2xl font-bold text-slate-900">Disputes & The Goodwill Deletion Playbook</h2>
+
+                <div class="space-y-4 text-xs sm:text-sm">
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                        <h4 class="font-bold text-slate-900 text-sm">1. Auditing Annual Reports</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Under federal law, you are entitled to free weekly copies of your full credit files from <strong>AnnualCreditReport.com</strong>. Review personal information, look for accounts you never authorized, and audit historical late payment dates. If an error is spotted, file an electronic or certified mail dispute under FCRA Section 611; the bureau has 30 days to verify the item with the furnisher or legally expunge it.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                        <h4 class="font-bold text-slate-900 text-sm">2. The Goodwill Deletion Letter</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            If you have a legitimate isolated 30-day late payment with a creditor where you have otherwise maintained a spotless multi-year history, write a courteous <strong>Goodwill Letter</strong> directly to the office of the CEO or executive customer relations:
+                        </p>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs italic font-serif text-slate-700 leading-relaxed">
+                            "Dear Executive Leadership, I am writing as an appreciative customer of [Issuer] for [X] years. In [Month, Year], I experienced an unexpected [family emergency/hospitalization] resulting in an isolated late payment. Since that time, I have maintained a 100% flawless record and set up autopay. Because I am currently preparing to apply for my first home mortgage, I respectfully request a goodwill adjustment to remove this historical delinquency mark from my credit report."
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Myths Busted -->
+            <section id="myths-busted" class="space-y-4 pt-6 border-t border-slate-200">
+                <h2 class="text-2xl font-bold text-slate-900">5 Common Credit Myths Busted</h2>
+                <div class="space-y-3 text-xs sm:text-sm text-slate-700">
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                        <strong class="text-red-600 block mb-1">Myth 1: "Carrying a credit card balance builds credit."</strong>
+                        Completely false. You do not need to pay a single penny of credit card interest to build an 800+ credit score. Paying in full every month builds identical credit without throwing money away on interest.
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                        <strong class="text-red-600 block mb-1">Myth 2: "Checking your own credit score lowers it."</strong>
+                        Checking your own credit report or credit score is a <strong>Soft Inquiry</strong> and has 0.0% impact on your credit rating.
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                        <strong class="text-red-600 block mb-1">Myth 3: "Closing unused credit cards cleans up your credit."</strong>
+                        Closing cards decreases your total available credit limit (spiking your utilization ratio) and eventually truncates your average age of accounts. Keep fee-free cards open.
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section id="faq" class="space-y-6 pt-6 border-t border-slate-200">
+                <h2 class="text-2xl font-bold text-slate-900">Frequently Asked Questions</h2>
+                <div class="space-y-4 text-xs sm:text-sm">
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                        <h4 class="font-bold text-slate-900">How long does it take to repair a bad credit score?</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Utilization optimizations (such as paying down cards or executing AZEO) update within <strong>30 days</strong>. Recovering from missed payments or collections takes 12 to 24 months of consistent on-time payments, with negative marks falling off credit reports entirely after 7 years.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                        <h4 class="font-bold text-slate-900">What is an Authorized User and does it help?</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            When a family member with excellent credit adds you as an <strong>Authorized User</strong> to their seasoned, zero-delinquency credit card, the entire history of that trade-line is added to your credit profile, providing a fast boost to thin credit files.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Primary Authoritative References & Citations -->
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 my-8">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 flex items-center gap-2">
+                    <i data-lucide="book-marked" class="w-4 h-4 text-purple-600"></i>
+                    <span>Primary Authoritative References & Empirical Sources</span>
+                </h4>
+                <ul class="text-xs text-slate-600 space-y-2 list-disc pl-5 leading-relaxed">
+                    <li><strong>Fair Isaac Corporation (FICO):</strong> FICO Score 8 & 9 Scoring Models, weighting hierarchies & revolving utilization thresholds.</li>
+                    <li><strong>Consumer Financial Protection Bureau (CFPB):</strong> Fair Credit Reporting Act (FCRA) 15 U.S.C. § 1681 and nationwide credit reporting agency dispute mechanisms.</li>
+                    <li><strong>Federal Trade Commission (FTC):</strong> Report to Congress Under Section 319 of the Fair and Accurate Credit Transactions Act of 2003 on consumer credit report accuracy.</li>
+                </ul>
+            </div>
+
+            <!-- AD PLACEMENT 5: Bottom Banner (728x90) -->
+            <div id="credit-ad-slot-bottom-banner" class="ad-placement-container my-8 w-full">
+                <div class="max-w-[728px] mx-auto p-3 bg-slate-50 border border-slate-200/80 rounded-2xl text-center shadow-2xs">
+                    <span class="block text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1.5">Advertisement</span>
+                    <div class="ad-slot-placeholder w-full min-h-[90px] flex flex-col items-center justify-center border border-dashed border-slate-300 rounded-xl bg-white/70 text-slate-400 text-xs py-3 px-4">
+                        <div class="flex items-center gap-2 text-slate-600 font-semibold text-xs">
+                            <i data-lucide="layout" class="w-4 h-4 text-slate-400"></i>
+                            <span>Bottom Leaderboard Banner (728x90)</span>
+                        </div>
+                        <span class="text-[10px] text-slate-400 mt-0.5">Google AdSense Ready • ID: credit-bottom-banner</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <a href="debt-payoff-strategies.html" class="text-xs font-semibold text-slate-500 hover:text-purple-600 flex items-center gap-1">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    <span>Previous: Debt Payoff Playbooks</span>
+                </a>
+                <a href="../calculators.html" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-1 shadow-2xs">
+                    <span>Explore All Interactive Calculators</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- Comprehensive Universal Footer -->
+    <footer class="bg-slate-50 border-t border-slate-200 mt-20 pt-16 pb-12 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center p-1">
+                            <svg viewBox="0 0 64 64" fill="none" class="w-full h-full">
+                                <rect x="12" y="36" width="6" height="16" rx="3" fill="#2563eb" fill-opacity="0.3"/>
+                                <rect x="22" y="28" width="6" height="24" rx="3" fill="#2563eb" fill-opacity="0.5"/>
+                                <rect x="32" y="20" width="6" height="32" rx="3" fill="#2563eb" fill-opacity="0.7"/>
+                                <rect x="42" y="14" width="6" height="38" rx="3" fill="#059669" fill-opacity="0.9"/>
+                                <path d="M10 38 L20 38 L26 22 L32 46 L38 28 L44 38 L54 38" stroke="#10b981" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-black text-slate-900">Wealth<span class="text-blue-600">Pulse</span></span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Practical personal finance guides, decision frameworks, and live calculation tools designed to bring calm to everyday money decisions.
+                    </p>
+                    <div class="text-[11px] text-slate-400">
+                        Inquiries: <a href="mailto:contact@wealthpulse.app" class="underline hover:text-blue-600">contact@wealthpulse.app</a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Topic Hubs -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Topic Hubs</h5>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="personal-finance-101.html" class="hover:text-blue-600">Personal Finance 101</a></li>
+                        <li><a href="budgeting-methods.html" class="hover:text-blue-600">Budgeting & Cash Flow</a></li>
+                        <li><a href="emergency-fund.html" class="hover:text-blue-600">Emergency Fund Strategies</a></li>
+                        <li><a href="debt-payoff-strategies.html" class="hover:text-blue-600">Debt Payoff Playbooks</a></li>
+                        <li><a href="credit-scores.html" class="hover:text-blue-600 font-semibold text-blue-600">Credit Score Mechanics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Calculators -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Calculators & Tools</h5>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="../calculators.html#budget-calculator" class="hover:text-blue-600">50/30/20 Budget Calculator</a></li>
+                        <li><a href="../calculators.html#compound-calculator" class="hover:text-blue-600">Compound Interest Simulator</a></li>
+                        <li><a href="../calculators.html#debt-simulator" class="hover:text-blue-600">Debt Snowball vs Avalanche</a></li>
+                        <li><a href="../calculators.html#emergency-planner" class="hover:text-blue-600">Emergency Fund Tracker</a></li>
+                        <li><a href="../index.html#quiz-section" class="hover:text-blue-600">Financial Health Checkup</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Trust & Transparency -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Trust & Policies</h5>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="../about.html" class="hover:text-blue-600">About WealthPulse</a></li>
+                        <li><a href="../editorial-policy.html" class="hover:text-blue-600">Editorial Policy & Research</a></li>
+                        <li><a href="../disclaimer.html" class="hover:text-blue-600">Financial Disclaimer</a></li>
+                        <li><a href="../privacy-policy.html" class="hover:text-blue-600">Privacy Policy (AdSense)</a></li>
+                        <li><a href="../cookie-policy.html" class="hover:text-blue-600">Cookie Policy</a></li>
+                        <li><a href="../terms.html" class="hover:text-blue-600">Terms and Conditions</a></li>
+                        <li><a href="../affiliate-disclosure.html" class="hover:text-blue-600">Affiliate & Ad Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <span>&copy; 2026 WealthPulse Media. All rights reserved.</span>
+                <div class="flex flex-wrap gap-4 text-[11px]">
+                    <a href="../privacy-policy.html" class="hover:underline">Privacy Policy</a>
+                    <a href="../terms.html" class="hover:underline">Terms of Service</a>
+                    <a href="../disclaimer.html" class="hover:underline">Disclaimer</a>
+                    <a href="../editorial-policy.html" class="hover:underline">Editorial Policy</a>
+                    <a href="../cookie-policy.html" class="hover:underline">Cookie Policy</a>
+                    <a href="../affiliate-disclosure.html" class="hover:underline">Affiliate Disclosure</a>
+                    <a href="../contact.html" class="hover:underline">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('reading-progress').style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>

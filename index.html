@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WealthPulse — Everyday Money, Elevated | Personal Finance & Interactive Calculators</title>
+    <meta name="description" content="Premium financial education, 50/30/20 budget calculators, debt payoff simulators, and AI financial guidance in a clean, modern interface.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Newsreader', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & Lucide Icons & Chart.js -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        .font-serif-heading { font-family: 'Newsreader', Georgia, serif; }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased min-h-screen selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Top Notice / Editorial Banner -->
+    <div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 text-center font-medium flex items-center justify-center gap-2 border-b border-slate-800">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Independent Financial Education & Interactive Simulators • Clean, Jargon-Free & 100% Free</span>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center p-1.5 shadow-sm group-hover:scale-105 transition transform">
+                    <svg viewBox="0 0 64 64" fill="none" class="w-full h-full">
+                        <rect x="12" y="36" width="6" height="16" rx="3" fill="#2563eb" fill-opacity="0.3"/>
+                        <rect x="22" y="28" width="6" height="24" rx="3" fill="#2563eb" fill-opacity="0.5"/>
+                        <rect x="32" y="20" width="6" height="32" rx="3" fill="#2563eb" fill-opacity="0.7"/>
+                        <rect x="42" y="14" width="6" height="38" rx="3" fill="#059669" fill-opacity="0.9"/>
+                        <path d="M10 38 L20 38 L26 22 L32 46 L38 28 L44 38 L54 38" stroke="#10b981" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="38" cy="28" r="3.5" fill="#38bdf8"/>
+                        <circle cx="44" cy="38" r="2.5" fill="#ffffff"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="text-2xl font-black tracking-tight text-slate-900 flex items-center">
+                        Wealth<span class="text-blue-600">Pulse</span>
+                    </span>
+                    <span class="block text-[10px] uppercase font-bold tracking-widest text-slate-500 -mt-1">Everyday Money, Elevated</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#categories" class="hover:text-blue-600 transition">Categories</a>
+                <a href="calculators.html" class="hover:text-blue-600 transition flex items-center gap-1.5">
+                    <span>Tools & Calculators</span>
+                    <span class="px-2 py-0.5 text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200/60 rounded-full">Suite</span>
+                </a>
+                <a href="#quiz-section" class="hover:text-blue-600 transition">Health Checkup</a>
+                <a href="#guides" class="hover:text-blue-600 transition">Featured Guides</a>
+                <a href="about.html" class="hover:text-blue-600 transition">About Us</a>
+                <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
+            </nav>
+
+            <!-- Actions (Currency, Bookmarks, Copilot CTA) -->
+            <div class="flex items-center gap-3">
+                <!-- Currency Selector -->
+                <select id="currency-selector" aria-label="Select Currency" class="text-xs font-bold px-2.5 py-2 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-2xs">
+                    <option value="$">$ USD</option>
+                    <option value="€">€ EUR</option>
+                    <option value="£">£ GBP</option>
+                    <option value="₹">₹ INR</option>
+                </select>
+
+                <!-- Bookmarked Guides Counter -->
+                <div class="relative hidden sm:block">
+                    <button class="p-2.5 rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition shadow-2xs" title="Saved Guides">
+                        <i data-lucide="bookmark" class="w-4 h-4"></i>
+                    </button>
+                    <span id="saved-count" class="hidden absolute -top-1.5 -right-1.5 bg-blue-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </div>
+
+                <!-- Ask AI Copilot Button -->
+                <button id="open-copilot-btn" class="flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl shadow-sm hover:shadow transition transform hover:-translate-y-0.5">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-blue-200"></i>
+                    <span>Ask FinBot</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Subtle Light Grey Gradient) -->
+    <section class="relative pt-14 pb-20 md:pt-20 md:pb-28 border-b border-slate-200/80 bg-gradient-to-b from-slate-50 via-white to-white overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 text-blue-800 text-xs font-semibold mb-6 shadow-2xs">
+                <i data-lucide="compass" class="w-3.5 h-3.5 text-blue-600"></i>
+                <span>Next-Generation Financial Education & Dynamic Simulators</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="font-serif-heading text-4xl sm:text-5xl md:text-6xl font-normal text-slate-900 tracking-tight leading-[1.15] mb-6">
+                Everyday money, <span class="italic text-blue-600 font-serif-heading underline decoration-emerald-400 decoration-wavy decoration-2">made actionable.</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+                Clear, jargon-free guides paired with live interactive calculators and personalized debt payoff simulators. Plan budgets, conquer debt, and grow wealth with total clarity.
+            </p>
+
+            <!-- Search Bar -->
+            <div class="max-w-xl mx-auto relative mb-12">
+                <i data-lucide="search" class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                <input type="text" id="guide-search" placeholder="Search guides, strategies, or calculators (e.g. 50/30/20, snowball, emergency fund)..." 
+                       class="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm text-slate-800 placeholder-slate-400">
+            </div>
+
+            <!-- Quick Action Cards -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto text-left">
+                <a href="#budget-calculator" class="p-4 rounded-2xl bg-white border border-slate-200 hover:border-blue-500 transition group shadow-sm hover:shadow-md">
+                    <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                        <i data-lucide="pie-chart" class="w-4 h-4"></i>
+                    </div>
+                    <div class="text-xs font-bold text-slate-900">50/30/20 Budget</div>
+                    <div class="text-[11px] text-slate-500">Instant visualizer</div>
+                </a>
+
+                <a href="#debt-simulator" class="p-4 rounded-2xl bg-white border border-slate-200 hover:border-emerald-500 transition group shadow-sm hover:shadow-md">
+                    <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                        <i data-lucide="trending-down" class="w-4 h-4"></i>
+                    </div>
+                    <div class="text-xs font-bold text-slate-900">Debt Simulator</div>
+                    <div class="text-[11px] text-slate-500">Snowball vs Avalanche</div>
+                </a>
+
+                <a href="#emergency-planner" class="p-4 rounded-2xl bg-white border border-slate-200 hover:border-amber-500 transition group shadow-sm hover:shadow-md">
+                    <div class="w-9 h-9 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                        <i data-lucide="shield-check" class="w-4 h-4"></i>
+                    </div>
+                    <div class="text-xs font-bold text-slate-900">Emergency Fund</div>
+                    <div class="text-[11px] text-slate-500">Goal milestone tracker</div>
+                </a>
+
+                <a href="#quiz-section" class="p-4 rounded-2xl bg-white border border-slate-200 hover:border-purple-500 transition group shadow-sm hover:shadow-md">
+                    <div class="w-9 h-9 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                        <i data-lucide="award" class="w-4 h-4"></i>
+                    </div>
+                    <div class="text-xs font-bold text-slate-900">Health Score</div>
+                    <div class="text-[11px] text-slate-500">60-second diagnostic</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AD PLACEMENT 1: Homepage Top Leaderboard (Responsive Banner) -->
+    <div id="home-ad-slot-banner" class="ad-placement-container max-w-5xl mx-auto px-4 mt-8">
+        <div class="p-3 bg-slate-50 border border-slate-200/80 rounded-2xl text-center shadow-2xs">
+            <span class="block text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1.5">Advertisement</span>
+            <div class="ad-slot-placeholder w-full min-h-[90px] flex flex-col items-center justify-center border border-dashed border-slate-300 rounded-xl bg-white/70 text-slate-400 text-xs py-3 px-4">
+                <!-- Google AdSense Responsive Leaderboard:
+                     <ins class="adsbygoogle"
+                          style="display:block"
+                          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                          data-ad-slot="XXXXXXXXXX"
+                          data-ad-format="auto"
+                          data-full-width-responsive="true"></ins>
+                     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                -->
+                <div class="flex items-center gap-2 text-slate-600 font-semibold text-xs">
+                    <i data-lucide="layout" class="w-4 h-4 text-slate-400"></i>
+                    <span>Homepage Leaderboard Ad Placement (Responsive 728x90)</span>
+                </div>
+                <span class="text-[10px] text-slate-400 mt-0.5">Google AdSense Ready • Slot ID: home-ad-slot-banner</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Grid -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
+
+        <!-- Section 1: The 5 Core Categories -->
+        <section id="categories">
+            <div class="flex items-end justify-between mb-8">
+                <div>
+                    <h2 class="text-xs font-bold tracking-widest text-blue-600 uppercase">Knowledge Hubs</h2>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Explore by Category</h3>
+                </div>
+                <span class="text-xs text-slate-500">5 Essential Pillars</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
+                <!-- Cat 1 -->
+                <div class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-blue-500 transition shadow-sm hover:shadow-md">
+                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+                        <i data-lucide="layers" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-base mb-1">Personal Finance</h4>
+                    <p class="text-xs text-slate-500 mb-4 leading-relaxed">The foundational order of operations for income, wealth preservation, and cash flow.</p>
+                    <a href="guides/personal-finance-101.html" class="inline-flex items-center text-xs font-semibold text-blue-600 hover:text-blue-700">
+                        <span>Read Guides</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Cat 2 -->
+                <div class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-emerald-500 transition shadow-sm hover:shadow-md">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
+                        <i data-lucide="calculator" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-base mb-1">Budgeting</h4>
+                    <p class="text-xs text-slate-500 mb-4 leading-relaxed">50/30/20, Zero-based, and envelope systems compared and made effortless.</p>
+                    <a href="guides/budgeting-methods.html" class="inline-flex items-center text-xs font-semibold text-emerald-600 hover:text-emerald-700">
+                        <span>Read Guides</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Cat 3 -->
+                <div class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-amber-500 transition shadow-sm hover:shadow-md">
+                    <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-4">
+                        <i data-lucide="piggy-bank" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-base mb-1">Saving Strategies</h4>
+                    <p class="text-xs text-slate-500 mb-4 leading-relaxed">High-yield savings accounts, building 3–6 month emergency buffers step-by-step.</p>
+                    <a href="guides/emergency-fund.html" class="inline-flex items-center text-xs font-semibold text-amber-600 hover:text-amber-700">
+                        <span>Read Guides</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Cat 4 -->
+                <div class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-red-500 transition shadow-sm hover:shadow-md">
+                    <div class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center mb-4">
+                        <i data-lucide="flame" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-base mb-1">Debt Management</h4>
+                    <p class="text-xs text-slate-500 mb-4 leading-relaxed">Mathematical Avalanche vs psychological Snowball to eliminate loans and cards.</p>
+                    <a href="guides/debt-payoff-strategies.html" class="inline-flex items-center text-xs font-semibold text-red-600 hover:text-red-700">
+                        <span>Read Guides</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Cat 5 -->
+                <div class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-purple-500 transition shadow-sm hover:shadow-md">
+                    <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-4">
+                        <i data-lucide="trending-up" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-base mb-1">Credit Health</h4>
+                    <p class="text-xs text-slate-500 mb-4 leading-relaxed">FICO score mechanics, lowering credit utilization, and correcting report errors.</p>
+                    <a href="guides/credit-scores.html" class="inline-flex items-center text-xs font-semibold text-purple-600 hover:text-purple-700">
+                        <span>Read Guides</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- AD PLACEMENT 2: Topic Hub to Interactive Suite Divider Banner -->
+        <div id="home-ad-slot-hub" class="ad-placement-container my-12 w-full">
+            <div class="max-w-4xl mx-auto p-3 bg-slate-50 border border-slate-200/80 rounded-2xl text-center shadow-2xs">
+                <span class="block text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1.5">Advertisement</span>
+                <div class="ad-slot-placeholder w-full min-h-[90px] flex flex-col items-center justify-center border border-dashed border-slate-300 rounded-xl bg-white/70 text-slate-400 text-xs py-3 px-4">
+                    <!-- Google AdSense In-Feed / Banner:
+                         <ins class="adsbygoogle"
+                              style="display:block"
+                              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                              data-ad-slot="XXXXXXXXXX"
+                              data-ad-format="auto"
+                              data-full-width-responsive="true"></ins>
+                         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                    -->
+                    <div class="flex items-center gap-2 text-slate-600 font-semibold text-xs">
+                        <i data-lucide="layout" class="w-4 h-4 text-slate-400"></i>
+                        <span>Category Hub Banner Ad Placement (Responsive)</span>
+                    </div>
+                    <span class="text-[10px] text-slate-400 mt-0.5">Google AdSense Ready • Slot ID: home-ad-slot-hub</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Interactive Tools Suite (White Theme with Slate Accents) -->
+        <section id="calculators" class="scroll-mt-28">
+            <div class="mb-10 text-center max-w-2xl mx-auto">
+                <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-50 text-blue-700 border border-blue-200/60">Hands-On Financial Modeling</span>
+                <h3 class="text-3xl font-extrabold text-slate-900 mt-2 mb-3">Interactive Financial Toolkit</h3>
+                <p class="text-sm text-slate-600">Model your finances in real-time. Calculate budgets, compare debt payoffs, and chart your savings buffer.</p>
+            </div>
+
+            <!-- Tool 1: 50/30/20 Smart Budget Calculator -->
+            <div id="budget-calculator" class="p-6 sm:p-10 rounded-3xl bg-slate-50/70 border border-slate-200 shadow-sm mb-10">
+                <div class="flex flex-col lg:flex-row gap-10 items-center justify-between">
+                    <div class="w-full lg:w-1/2 space-y-6">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center">
+                                    <i data-lucide="pie-chart" class="w-5 h-5"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-900">50/30/20 Smart Budget Calculator</h4>
+                            </div>
+                            <button id="export-budget-btn" class="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                                <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                                <span>Export CSV</span>
+                            </button>
+                        </div>
+
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Input your total monthly net take-home income. The framework allocates 50% to essential living, 30% to personal lifestyle, and 20% to savings and debt freedom.
+                        </p>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="budget-income" class="text-xs font-bold text-slate-700">Monthly Net Income</label>
+                                <span class="text-xs text-slate-400">Drag or type</span>
+                            </div>
+                            <input type="number" id="budget-income" value="5000" min="0" step="100" 
+                                   class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-900 font-bold text-lg mb-3 shadow-2xs focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            <input type="range" id="budget-slider" min="1000" max="25000" step="250" value="5000"
+                                   class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                        </div>
+
+                        <!-- 3 Metric Cards -->
+                        <div class="grid grid-cols-3 gap-3">
+                            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">
+                                <span class="text-[11px] font-bold text-emerald-700 block mb-1">Needs (50%)</span>
+                                <span id="val-needs" class="text-lg font-black text-slate-900">$2,500</span>
+                                <span class="block text-[10px] text-slate-400 mt-1">Rent, bills, groceries</span>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">
+                                <span class="text-[11px] font-bold text-blue-700 block mb-1">Wants (30%)</span>
+                                <span id="val-wants" class="text-lg font-black text-slate-900">$1,500</span>
+                                <span class="block text-[10px] text-slate-400 mt-1">Dining, fun, subs</span>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">
+                                <span class="text-[11px] font-bold text-amber-700 block mb-1">Savings (20%)</span>
+                                <span id="val-savings" class="text-lg font-black text-slate-900">$1,000</span>
+                                <span class="block text-[10px] text-slate-400 mt-1">HYSA, 401k, extra debt</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Doughnut Chart -->
+                    <div class="w-full lg:w-1/2 flex flex-col items-center justify-center">
+                        <div class="relative w-68 h-68 p-4 bg-white rounded-3xl border border-slate-200 shadow-sm">
+                            <canvas id="budgetChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Two-Column Grid for Debt Payoff Simulator & Emergency Fund Planner -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Tool 2: Debt Snowball vs Avalanche Simulator -->
+                <div id="debt-simulator" class="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center">
+                                <i data-lucide="trending-down" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900">Debt Payoff Simulator</h4>
+                                <span class="text-xs text-slate-500">Snowball vs. Avalanche Comparison</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                                <div class="text-xs font-bold text-slate-700 mb-2">Debt #1 (e.g., Credit Card)</div>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <input type="number" id="debt1-balance" placeholder="Balance" value="6000" class="px-3 py-2 rounded-xl border border-slate-200 bg-white text-xs font-medium focus:ring-1 focus:ring-blue-500">
+                                    <input type="number" id="debt1-rate" placeholder="APR %" value="24" class="px-3 py-2 rounded-xl border border-slate-200 bg-white text-xs font-medium focus:ring-1 focus:ring-blue-500">
+                                    <input type="number" id="debt1-min" placeholder="Min Pay" value="150" class="px-3 py-2 rounded-xl border border-slate-200 bg-white text-xs font-medium focus:ring-1 focus:ring-blue-500">
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                                <div class="text-xs font-bold text-slate-700 mb-2">Debt #2 (e.g., Auto / Loan)</div>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <input type="number" id="debt2-balance" placeholder="Balance" value="12000" class="px-3 py-2 rounded-xl border border-slate-200 bg-white text-xs font-medium focus:ring-1 focus:ring-blue-500">
+                                    <input type="number" id="debt2-rate" placeholder="APR %" value="9" class="px-3 py-2 rounded-xl border border-slate-200 bg-white text-xs font-medium focus:ring-1 focus:ring-blue-500">
+                                    <input type="number" id="debt2-min" placeholder="Min Pay" value="250" class="px-3 py-2 rounded-xl border border-slate-200 bg-white text-xs font-medium focus:ring-1 focus:ring-blue-500">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="debt-extra-payment" class="text-xs font-bold text-slate-700 mb-1 block">Extra Monthly Principal Payment</label>
+                                <input type="number" id="debt-extra-payment" value="300" class="w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs font-bold focus:ring-1 focus:ring-blue-500">
+                            </div>
+                        </div>
+
+                        <button id="calc-debt-btn" class="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl text-xs transition shadow-xs">
+                            Run Side-by-Side Simulation
+                        </button>
+                    </div>
+
+                    <!-- Comparison Results -->
+                    <div id="debt-result-box" class="mt-6 pt-6 border-t border-slate-200 space-y-3">
+                        <div class="grid grid-cols-2 gap-3 text-center">
+                            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                                <span class="text-[10px] font-bold text-slate-500 uppercase">Snowball Payoff</span>
+                                <div id="snowball-months" class="text-base font-bold text-slate-900">28 months</div>
+                                <div id="snowball-interest" class="text-xs text-red-600 font-semibold">$2,410 interest</div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200">
+                                <span class="text-[10px] font-bold text-emerald-700 uppercase">Avalanche Payoff</span>
+                                <div id="avalanche-months" class="text-base font-bold text-emerald-800">26 months</div>
+                                <div id="avalanche-interest" class="text-xs text-emerald-700 font-semibold">$1,840 interest</div>
+                            </div>
+                        </div>
+                        <div class="text-center text-xs font-semibold text-emerald-700" id="avalanche-savings">
+                            $570 saved in interest with Avalanche method!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 3: Emergency Fund Goal Planner -->
+                <div id="emergency-planner" class="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
+                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900">Emergency Fund Goal Tracker</h4>
+                                <span class="text-xs text-slate-500">Calculate 3 & 6 Month Safety Nets</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div>
+                                <label for="monthly-expense" class="text-xs font-bold text-slate-700 mb-1 block">Monthly Baseline Living Costs</label>
+                                <input type="number" id="monthly-expense" value="3200" class="w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs font-bold focus:ring-1 focus:ring-blue-500">
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label for="current-saved" class="text-xs font-bold text-slate-700 mb-1 block">Already Saved</label>
+                                    <input type="number" id="current-saved" value="4500" class="w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs font-bold focus:ring-1 focus:ring-blue-500">
+                                </div>
+                                <div>
+                                    <label for="monthly-saving-capacity" class="text-xs font-bold text-slate-700 mb-1 block">Monthly Saving</label>
+                                    <input type="number" id="monthly-saving-capacity" value="500" class="w-full px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-xs font-bold focus:ring-1 focus:ring-blue-500">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar & Target Display -->
+                        <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-200 space-y-4">
+                            <div class="flex justify-between items-center text-xs font-bold">
+                                <span class="text-slate-700">Goal Progress (Towards 6 Months)</span>
+                                <span id="fund-progress-pct" class="text-amber-700">23% Completed</span>
+                            </div>
+                            <div class="w-full h-3 bg-slate-200 rounded-full overflow-hidden">
+                                <div id="fund-progress-bar" class="h-full bg-amber-500 rounded-full transition-all duration-500" style="width: 23%"></div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-2 pt-2 border-t border-amber-200 text-center">
+                                <div>
+                                    <span class="text-[10px] text-slate-500 uppercase block">3-Month Basic Buffer</span>
+                                    <span id="fund-target-3m" class="text-sm font-bold text-slate-900">$9,600</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-slate-500 uppercase block">6-Month Total Safety</span>
+                                    <span id="fund-target-6m" class="text-sm font-bold text-slate-900">$19,200</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-center">
+                        <span id="fund-eta" class="text-xs font-semibold text-emerald-700">
+                            30 months to reach full 6-month safety net
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Interactive Financial Health Quiz (Clean White Theme) -->
+        <section id="quiz-section" class="scroll-mt-28">
+            <div class="p-8 sm:p-12 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm text-slate-900 relative overflow-hidden">
+                <div class="max-w-2xl mx-auto">
+                    <div id="quiz-content" class="bg-white text-slate-800 p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+                        <!-- Initial Quiz Prompt -->
+                        <div class="text-center">
+                            <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 mb-4">
+                                <i data-lucide="award" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-2xl font-black mb-2 text-slate-900">Financial Health Checkup</h3>
+                            <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                                Take a 4-question diagnostic to benchmark your emergency preparedness, debt exposure, and investing discipline. Get an instant score and custom action plan.
+                            </p>
+                            <button id="start-quiz-btn" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm transition shadow-sm">
+                                Start 60-Second Assessment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Featured In-Depth Masterclasses -->
+        <section id="guides" class="scroll-mt-28">
+            <div class="flex items-end justify-between mb-8">
+                <div>
+                    <h2 class="text-xs font-bold tracking-widest text-blue-600 uppercase">Editorial Library</h2>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Essential Masterclasses</h3>
+                </div>
+                <span class="text-xs text-slate-500">Updated for 2026</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Guide 1 -->
+                <article class="guide-card rounded-2xl bg-white border border-slate-200 hover:border-blue-500 transition overflow-hidden shadow-sm hover:shadow-md flex flex-col justify-between"
+                         data-title="Personal Finance 101: Order of Operations" data-category="Personal Finance">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-700 border border-blue-200/60">
+                                Personal Finance
+                            </span>
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs text-slate-400 flex items-center gap-1">
+                                    <i data-lucide="clock" class="w-3.5 h-3.5"></i> 15 min read
+                                </span>
+                                <button class="bookmark-btn p-1 text-slate-400 hover:text-blue-600" data-id="pf-101" data-title="Personal Finance 101: Order of Operations" title="Save Guide">
+                                    <i data-lucide="bookmark" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <h4 class="text-lg font-bold text-slate-900 mb-2 leading-snug hover:text-blue-600 transition">
+                            <a href="guides/personal-finance-101.html">Personal Finance 101: The Order of Operations for Your Money</a>
+                        </h4>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            The definitive decision hierarchy for deploying every dollar: from starter buffers to 401(k) matching, toxic debt elimination, and tax-advantaged compounding.
+                        </p>
+                    </div>
+
+                    <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-400">Nov 2026</span>
+                        <a href="guides/personal-finance-101.html" class="font-bold text-blue-600 hover:underline flex items-center gap-1">
+                            Read Masterclass <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Guide 2 -->
+                <article class="guide-card rounded-2xl bg-white border border-slate-200 hover:border-emerald-500 transition overflow-hidden shadow-sm hover:shadow-md flex flex-col justify-between"
+                         data-title="Budgeting Methods Compared: 50/30/20 vs Zero-Based" data-category="Budgeting">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-200/60">
+                                Budgeting
+                            </span>
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs text-slate-400 flex items-center gap-1">
+                                    <i data-lucide="clock" class="w-3.5 h-3.5"></i> 14 min read
+                                </span>
+                                <button class="bookmark-btn p-1 text-slate-400 hover:text-emerald-600" data-id="budget-compare" data-title="Budgeting Methods Compared: 50/30/20 vs Zero-Based" title="Save Guide">
+                                    <i data-lucide="bookmark" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <h4 class="text-lg font-bold text-slate-900 mb-2 leading-snug hover:text-emerald-600 transition">
+                            <a href="guides/budgeting-methods.html">Budgeting Methods Compared: 50/30/20, Zero-Based & Envelope</a>
+                        </h4>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Direct side-by-side analysis of the top 4 money systems: friction levels, sinking funds, behavioral envelopes, and reverse budgeting for your cognitive wiring.
+                        </p>
+                    </div>
+
+                    <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-400">Nov 2026</span>
+                        <a href="guides/budgeting-methods.html" class="font-bold text-emerald-600 hover:underline flex items-center gap-1">
+                            Read Masterclass <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Guide 3 -->
+                <article class="guide-card rounded-2xl bg-white border border-slate-200 hover:border-red-500 transition overflow-hidden shadow-sm hover:shadow-md flex flex-col justify-between"
+                         data-title="Debt Payoff Strategies: Avalanche vs Snowball" data-category="Debt Management">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-red-50 text-red-700 border border-red-200/60">
+                                Debt
+                            </span>
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs text-slate-400 flex items-center gap-1">
+                                    <i data-lucide="clock" class="w-3.5 h-3.5"></i> 16 min read
+                                </span>
+                                <button class="bookmark-btn p-1 text-slate-400 hover:text-red-600" data-id="debt-methods" data-title="Debt Payoff Strategies: Avalanche vs Snowball" title="Save Guide">
+                                    <i data-lucide="bookmark" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <h4 class="text-lg font-bold text-slate-900 mb-2 leading-snug hover:text-red-600 transition">
+                            <a href="guides/debt-payoff-strategies.html">Debt Payoff Methods: Avalanche vs Snowball Compared</a>
+                        </h4>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Mathematical APR velocity versus psychological dopamine wins: $32k portfolio simulations, balance transfer rules, and creditor negotiation scripts.
+                        </p>
+                    </div>
+
+                    <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-400">Nov 2026</span>
+                        <a href="guides/debt-payoff-strategies.html" class="font-bold text-red-600 hover:underline flex items-center gap-1">
+                            Read Masterclass <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Guide 4 -->
+                <article class="guide-card rounded-2xl bg-white border border-slate-200 hover:border-amber-500 transition overflow-hidden shadow-sm hover:shadow-md flex flex-col justify-between"
+                         data-title="Emergency Fund Strategies: 3-6 Month Safety Buffer" data-category="Saving Strategies">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-50 text-amber-700 border border-amber-200/60">
+                                Saving
+                            </span>
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs text-slate-400 flex items-center gap-1">
+                                    <i data-lucide="clock" class="w-3.5 h-3.5"></i> 14 min read
+                                </span>
+                                <button class="bookmark-btn p-1 text-slate-400 hover:text-amber-600" data-id="emergency-guide" data-title="Emergency Fund Strategies: 3-6 Month Safety Buffer" title="Save Guide">
+                                    <i data-lucide="bookmark" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <h4 class="text-lg font-bold text-slate-900 mb-2 leading-snug hover:text-amber-600 transition">
+                            <a href="guides/emergency-fund.html">Emergency Fund Strategies: How to Build a 3–6 Month Safety Net</a>
+                        </h4>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Calculating bare-bones survival budgets, maximizing FDIC-insured HYSAs and T-bills, and applying the 3-question emergency litmus test.
+                        </p>
+                    </div>
+
+                    <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-400">Nov 2026</span>
+                        <a href="guides/emergency-fund.html" class="font-bold text-amber-600 hover:underline flex items-center gap-1">
+                            Read Masterclass <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Guide 5 -->
+                <article class="guide-card rounded-2xl bg-white border border-slate-200 hover:border-purple-500 transition overflow-hidden shadow-sm hover:shadow-md flex flex-col justify-between"
+                         data-title="Credit Scores & Financial Health: FICO Playbook" data-category="Credit Health">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-purple-50 text-purple-700 border border-purple-200/60">
+                                Credit Health
+                            </span>
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs text-slate-400 flex items-center gap-1">
+                                    <i data-lucide="clock" class="w-3.5 h-3.5"></i> 15 min read
+                                </span>
+                                <button class="bookmark-btn p-1 text-slate-400 hover:text-purple-600" data-id="credit-guide" data-title="Credit Scores & Financial Health: FICO Playbook" title="Save Guide">
+                                    <i data-lucide="bookmark" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <h4 class="text-lg font-bold text-slate-900 mb-2 leading-snug hover:text-purple-600 transition">
+                            <a href="guides/credit-scores.html">Credit Scores & Financial Health: How FICO Works & Proven Boosts</a>
+                        </h4>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Master the 5 FICO levers, utilize statement date vs due date timing, deploy the AZEO method, and send effective goodwill deletion letters.
+                        </p>
+                    </div>
+
+                    <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-400">Nov 2026</span>
+                        <a href="guides/credit-scores.html" class="font-bold text-purple-600 hover:underline flex items-center gap-1">
+                            Read Masterclass <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 5: Lead Magnet / Free Budget Template Kit -->
+        <section class="p-8 sm:p-12 rounded-3xl bg-slate-50 border border-slate-200 text-center max-w-4xl mx-auto shadow-sm">
+            <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="file-spreadsheet" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-black text-slate-900 mb-2">Free Master Budget & Debt Payoff Template</h3>
+            <p class="text-sm text-slate-600 max-w-xl mx-auto mb-6">
+                Download our clean, automated Google Sheets & Excel budgeting template with automatic 50/30/20 category tracking and debt snowball schedules.
+            </p>
+            <form onsubmit="event.preventDefault(); alert('Template kit sent! Check your inbox.');" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input type="email" required placeholder="Enter your email address..." class="px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm text-slate-900 flex-1 focus:ring-2 focus:ring-blue-500 focus:outline-none shadow-2xs">
+                <button type="submit" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm transition shadow-sm">
+                    Download Free Kit
+                </button>
+            </form>
+            <span class="block text-[11px] text-slate-400 mt-3">Instant download. No spam, unsubscribe anytime.</span>
+        </section>
+
+    </main>
+
+    <!-- AI Copilot Chat Drawer (Sliding White Panel) -->
+    <div id="copilot-drawer" class="fixed inset-y-0 right-0 z-50 w-full sm:w-96 bg-white shadow-2xl border-l border-slate-200 transform translate-x-full transition-transform duration-300 flex flex-col">
+        <!-- Drawer Header -->
+        <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                </div>
+                <div>
+                    <h5 class="text-sm font-bold text-slate-900">FinBot Copilot</h5>
+                    <span class="text-[10px] text-blue-600 font-medium">Interactive Financial Assistant</span>
+                </div>
+            </div>
+            <button id="close-copilot-btn" aria-label="Close Copilot" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <!-- Chat Messages -->
+        <div id="copilot-messages" class="flex-1 overflow-y-auto p-4 space-y-3 bg-slate-50/40">
+            <div class="flex justify-start">
+                <div class="bg-white text-slate-800 border border-slate-200 max-w-[85%] rounded-2xl px-4 py-3 text-sm shadow-2xs leading-relaxed">
+                    👋 Hi there! I'm your interactive personal finance copilot. Ask me anything about budgeting, debt payoff strategies, emergency savings, or retirement basics.
+                </div>
+            </div>
+        </div>
+
+        <!-- Prompt Suggestions -->
+        <div class="px-4 py-2 border-t border-slate-200 flex flex-wrap gap-1.5 bg-slate-50">
+            <button class="preset-prompt text-[11px] px-2.5 py-1 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-blue-500 hover:text-blue-600 transition" data-query="How does the 50/30/20 rule work?">
+                50/30/20 Rule
+            </button>
+            <button class="preset-prompt text-[11px] px-2.5 py-1 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-blue-500 hover:text-blue-600 transition" data-query="Should I do Debt Snowball or Avalanche?">
+                Snowball vs Avalanche
+            </button>
+            <button class="preset-prompt text-[11px] px-2.5 py-1 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-blue-500 hover:text-blue-600 transition" data-query="How much emergency fund do I need?">
+                Emergency Fund
+            </button>
+        </div>
+
+        <!-- Input Box -->
+        <form id="copilot-form" class="p-3 border-t border-slate-200 bg-white flex gap-2">
+            <input type="text" id="copilot-input" placeholder="Type your money question..." class="flex-1 px-3.5 py-2 text-xs rounded-xl border border-slate-200 bg-slate-50 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button type="submit" aria-label="Send Message" class="p-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-xs transition">
+                <i data-lucide="send" class="w-4 h-4"></i>
+            </button>
+        </form>
+    </div>
+
+    <!-- Footer (Premium White Theme) -->
+    <footer class="bg-slate-50 border-t border-slate-200 mt-20 pt-16 pb-12 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center p-1">
+                            <svg viewBox="0 0 64 64" fill="none" class="w-full h-full">
+                                <rect x="12" y="36" width="6" height="16" rx="3" fill="#2563eb" fill-opacity="0.3"/>
+                                <rect x="22" y="28" width="6" height="24" rx="3" fill="#2563eb" fill-opacity="0.5"/>
+                                <rect x="32" y="20" width="6" height="32" rx="3" fill="#2563eb" fill-opacity="0.7"/>
+                                <rect x="42" y="14" width="6" height="38" rx="3" fill="#059669" fill-opacity="0.9"/>
+                                <path d="M10 38 L20 38 L26 22 L32 46 L38 28 L44 38 L54 38" stroke="#10b981" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-black text-slate-900">Wealth<span class="text-blue-600">Pulse</span></span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Practical personal finance guides, decision frameworks, and live calculation tools designed to bring calm to everyday money decisions.
+                    </p>
+                    <div class="text-[11px] text-slate-400">
+                        Inquiries: <a href="mailto:contact@wealthpulse.app" class="underline hover:text-blue-600">contact@wealthpulse.app</a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Categories -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Topic Hubs</h5>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="guides/personal-finance-101.html" class="hover:text-blue-600">Personal Finance 101</a></li>
+                        <li><a href="guides/budgeting-methods.html" class="hover:text-blue-600">Budgeting & Cash Flow</a></li>
+                        <li><a href="guides/emergency-fund.html" class="hover:text-blue-600">Emergency Fund Strategies</a></li>
+                        <li><a href="guides/debt-payoff-strategies.html" class="hover:text-blue-600">Debt Payoff Playbooks</a></li>
+                        <li><a href="guides/credit-scores.html" class="hover:text-blue-600">Credit Score Mechanics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Interactive Tools -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Calculators & Tools</h5>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="calculators.html#budget-calculator" class="hover:text-blue-600">50/30/20 Budget Calculator</a></li>
+                        <li><a href="calculators.html#compound-calculator" class="hover:text-blue-600">Compound Interest Simulator</a></li>
+                        <li><a href="calculators.html#debt-simulator" class="hover:text-blue-600">Debt Snowball vs Avalanche</a></li>
+                        <li><a href="calculators.html#emergency-planner" class="hover:text-blue-600">Emergency Fund Tracker</a></li>
+                        <li><a href="#quiz-section" class="hover:text-blue-600">Financial Health Checkup</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Trust & Policies -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Trust & Policies</h5>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="about.html" class="hover:text-blue-600">About WealthPulse</a></li>
+                        <li><a href="editorial-policy.html" class="hover:text-blue-600">Editorial Policy & Research</a></li>
+                        <li><a href="disclaimer.html" class="hover:text-blue-600">Financial Disclaimer</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-blue-600">Privacy Policy (AdSense)</a></li>
+                        <li><a href="cookie-policy.html" class="hover:text-blue-600">Cookie Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-blue-600">Terms and Conditions</a></li>
+                        <li><a href="affiliate-disclosure.html" class="hover:text-blue-600">Affiliate & Ad Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <span>&copy; 2026 WealthPulse Media. All rights reserved.</span>
+                <div class="flex flex-wrap gap-4 text-[11px]">
+                    <a href="privacy-policy.html" class="hover:underline">Privacy Policy</a>
+                    <a href="terms.html" class="hover:underline">Terms of Service</a>
+                    <a href="disclaimer.html" class="hover:underline">Disclaimer</a>
+                    <a href="editorial-policy.html" class="hover:underline">Editorial Policy</a>
+                    <a href="cookie-policy.html" class="hover:underline">Cookie Policy</a>
+                    <a href="affiliate-disclosure.html" class="hover:underline">Affiliate Disclosure</a>
+                    <a href="contact.html" class="hover:underline">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core App Logic -->
+    <script src="app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

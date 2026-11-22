@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance 101: The Order of Operations for Your Money | WealthPulse</title>
+    <meta name="description" content="The definitive step-by-step masterclass on personal finance: the exact order of operations for deploying every dollar, from emergency funds to tax-advantaged compounding.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Newsreader', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .font-serif-heading { font-family: 'Newsreader', Georgia, serif; }
+        #reading-progress { transition: width 0.1s ease-out; }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased min-h-screen selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Reading Progress Bar -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-slate-100 z-50">
+        <div id="reading-progress" class="h-full bg-blue-600 w-0"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="border-b border-slate-200/80 bg-white/95 backdrop-blur-md sticky top-0 z-40">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="../index.html" class="flex items-center gap-2.5 group">
+                    <div class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center p-1 shadow-sm group-hover:scale-105 transition transform">
+                        <svg viewBox="0 0 64 64" fill="none" class="w-full h-full">
+                            <rect x="12" y="36" width="6" height="16" rx="3" fill="#2563eb" fill-opacity="0.3"/>
+                            <rect x="22" y="28" width="6" height="24" rx="3" fill="#2563eb" fill-opacity="0.5"/>
+                            <rect x="32" y="20" width="6" height="32" rx="3" fill="#2563eb" fill-opacity="0.7"/>
+                            <rect x="42" y="14" width="6" height="38" rx="3" fill="#059669" fill-opacity="0.9"/>
+                            <path d="M10 38 L20 38 L26 22 L32 46 L38 28 L44 38 L54 38" stroke="#10b981" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="text-lg font-black tracking-tight text-slate-900 hidden sm:inline">Wealth<span class="text-blue-600">Pulse</span></span>
+                </a>
+                <span class="text-slate-300 hidden sm:inline">/</span>
+                <a href="../index.html#categories" class="text-xs font-semibold text-slate-500 hover:text-blue-600 flex items-center gap-1">
+                    <i data-lucide="arrow-left" class="w-3.5 h-3.5 text-blue-600"></i>
+                    <span>All Guides</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-xs font-semibold text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200/60">
+                    Comprehensive Masterclass • 15 min read
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Layout -->
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 lg:grid lg:grid-cols-12 lg:gap-10">
+
+        <!-- Table of Contents & Sticky Sidebar with Ad Placement 3 (Desktop) -->
+        <aside class="hidden lg:block lg:col-span-4 sticky top-24 self-start space-y-6">
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-blue-600 mb-4 flex items-center gap-2">
+                    <i data-lucide="list" class="w-4 h-4"></i>
+                    <span>Table of Contents</span>
+                </h4>
+                <nav class="space-y-2 text-xs font-medium text-slate-600">
+                    <a href="#intro" class="block hover:text-blue-600 py-1 transition">1. The Psychology of Sequence</a>
+                    <a href="#order-of-operations" class="block hover:text-blue-600 py-1 transition">2. The 7-Step Order of Operations</a>
+                    <a href="#step-1" class="block pl-3 border-l-2 border-blue-500 hover:text-blue-600 py-0.5 transition">Step 1: The $1,000 Starter Buffer</a>
+                    <a href="#step-2" class="block pl-3 border-l-2 border-blue-500 hover:text-blue-600 py-0.5 transition">Step 2: Employer 401(k) Match</a>
+                    <a href="#step-3" class="block pl-3 border-l-2 border-blue-500 hover:text-blue-600 py-0.5 transition">Step 3: High-Interest Debt Elimination</a>
+                    <a href="#step-4" class="block pl-3 border-l-2 border-blue-500 hover:text-blue-600 py-0.5 transition">Step 4: 3–6 Month Safety Fortress</a>
+                    <a href="#step-5" class="block pl-3 border-l-2 border-blue-500 hover:text-blue-600 py-0.5 transition">Step 5: Tax-Advantaged Compounding</a>
+                    <a href="#step-6" class="block pl-3 border-l-2 border-blue-500 hover:text-blue-600 py-0.5 transition">Step 6: Maxing Workplace 401(k)</a>
+                    <a href="#step-7" class="block pl-3 border-l-2 border-blue-500 hover:text-blue-600 py-0.5 transition">Step 7: Hyper-Accumulation</a>
+                    <a href="#case-study" class="block hover:text-blue-600 py-1 transition">3. Real-World Case Study</a>
+                    <a href="#interactive-checklist" class="block hover:text-blue-600 py-1 transition">4. Interactive Step Audit</a>
+                    <a href="#pitfalls" class="block hover:text-blue-600 py-1 transition">5. Common Traps & Pitfalls</a>
+                    <a href="#faq" class="block hover:text-blue-600 py-1 transition">6. Frequently Asked Questions</a>
+                </nav>
+            </div>
+
+            <!-- AD PLACEMENT 3: Sidebar Medium Rectangle (300x250) -->
+            <div id="pf101-ad-slot-sidebar" class="ad-placement-container my-6 w-full">
+                <div class="p-3 bg-slate-50 border border-slate-200/80 rounded-2xl text-center shadow-2xs">
+                    <span class="block text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1.5">Advertisement</span>
+                    <div class="ad-slot-placeholder w-full min-h-[250px] flex flex-col items-center justify-center border border-dashed border-slate-300 rounded-xl bg-white/70 text-slate-400 text-xs p-4">
+                        <!-- Google AdSense Unit (300x250):
+                             <ins class="adsbygoogle"
+                                  style="display:inline-block;width:300px;height:250px"
+                                  data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                                  data-ad-slot="XXXXXXXXXX"></ins>
+                             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        -->
+                        <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-400 flex items-center justify-center mb-2">
+                            <i data-lucide="square" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-xs font-semibold text-slate-600">Sidebar Ad Unit (300x250)</span>
+                        <span class="text-[10px] text-slate-400 mt-0.5">Google AdSense Ready • ID: pf101-sidebar</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Tool Box -->
+            <div class="p-5 rounded-2xl bg-blue-50/60 border border-blue-200/80 text-center shadow-2xs">
+                <span class="text-xs font-bold text-blue-900 block mb-1">Want to model your budget?</span>
+                <p class="text-[11px] text-slate-600 mb-3">Calculate your exact Needs, Wants, and Savings allocations in seconds.</p>
+                <a href="../calculators.html#budget-calculator" class="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs transition shadow-2xs">
+                    Open 50/30/20 Calculator
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Editorial Article Body -->
+        <article class="lg:col-span-8 space-y-10">
+
+            <!-- Hero Header -->
+            <section id="intro">
+                <div class="flex items-center gap-3 text-xs text-slate-400 mb-3">
+                    <span class="font-semibold text-blue-600">Core Curriculum</span>
+                    <span>•</span>
+                    <span>Updated November 2026</span>
+                    <span>•</span>
+                    <span>Peer-Reviewed by Financial Planners</span>
+                </div>
+                <h1 class="font-serif-heading text-3xl sm:text-4xl md:text-5xl font-normal text-slate-900 tracking-tight leading-tight mb-6">
+                    Personal Finance 101: The Definitive Order of Operations for Your Money
+                </h1>
+                <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-6">
+                    Most financial advice fails not because it is factually incorrect, but because it is given out of order. People are told to buy index funds while paying 26% interest on credit cards. They are told to pay off their 3% mortgage while leaving a 100% employer 401(k) match untouched. This comprehensive masterclass provides the exact mathematical and behavioral hierarchy for every dollar you earn.
+                </p>
+
+                <!-- Author Profile & Social Share Bar -->
+                <div class="flex flex-wrap items-center justify-between gap-4 py-4 border-y border-slate-200 text-xs">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center p-1.5 shrink-0 shadow-xs">
+                            <svg viewBox="0 0 64 64" fill="none" class="w-full h-full">
+                                <rect x="12" y="36" width="6" height="16" rx="3" fill="#2563eb" fill-opacity="0.3"/>
+                                <rect x="22" y="28" width="6" height="24" rx="3" fill="#2563eb" fill-opacity="0.5"/>
+                                <rect x="32" y="20" width="6" height="32" rx="3" fill="#2563eb" fill-opacity="0.7"/>
+                                <rect x="42" y="14" width="6" height="38" rx="3" fill="#059669" fill-opacity="0.9"/>
+                                <path d="M10 38 L20 38 L26 22 L32 46 L38 28 L44 38 L54 38" stroke="#10b981" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-bold text-slate-900">WealthPulse Editorial Research Desk</div>
+                            <div class="text-[11px] text-slate-500">Quantitative Finance Review • Fact-checked & Model-Verified</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[11px] font-semibold text-slate-400 mr-1">Share:</span>
+                        <a href="https://twitter.com/intent/tweet?text=Personal%20Finance%20101%3A%20The%20Order%20of%20Operations%20for%20Your%20Money&url=https%3A%2F%2Fwealthpulse.app%2Fguides%2Fpersonal-finance-101.html" target="_blank" rel="noopener noreferrer" class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-600 hover:text-blue-500 hover:border-blue-300 transition" title="Share on X / Twitter">
+                            <i data-lucide="twitter" class="w-3.5 h-3.5"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwealthpulse.app%2Fguides%2Fpersonal-finance-101.html" target="_blank" rel="noopener noreferrer" class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-600 hover:text-blue-700 hover:border-blue-300 transition" title="Share on LinkedIn">
+                            <i data-lucide="linkedin" class="w-3.5 h-3.5"></i>
+                        </a>
+                        <button onclick="navigator.clipboard.writeText(window.location.href); alert('Article URL copied to clipboard!');" class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-600 hover:text-emerald-600 hover:border-emerald-300 transition flex items-center gap-1" title="Copy Link">
+                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                            <span class="text-[11px] font-medium hidden sm:inline">Copy</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AD PLACEMENT 1: Top Banner (728x90 Desktop, Responsive Mobile) -->
+            <div id="pf101-ad-slot-top-banner" class="ad-placement-container my-8 w-full">
+                <div class="max-w-[728px] mx-auto p-3 bg-slate-50 border border-slate-200/80 rounded-2xl text-center shadow-2xs">
+                    <span class="block text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1.5">Advertisement</span>
+                    <div class="ad-slot-placeholder w-full min-h-[90px] flex flex-col items-center justify-center border border-dashed border-slate-300 rounded-xl bg-white/70 text-slate-400 text-xs py-3 px-4">
+                        <!-- Google AdSense Leaderboard (728x90 / Responsive):
+                             <ins class="adsbygoogle"
+                                  style="display:block"
+                                  data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                                  data-ad-slot="XXXXXXXXXX"
+                                  data-ad-format="auto"
+                                  data-full-width-responsive="true"></ins>
+                             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        -->
+                        <div class="flex items-center gap-2 text-slate-600 font-semibold text-xs">
+                            <i data-lucide="layout" class="w-4 h-4 text-slate-400"></i>
+                            <span>Top Leaderboard Banner (728x90)</span>
+                        </div>
+                        <span class="text-[10px] text-slate-400 mt-0.5">Google AdSense Ready • ID: pf101-top-banner</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Takeaway Box -->
+            <div class="p-6 rounded-2xl bg-blue-50/70 border-l-4 border-blue-600 shadow-2xs">
+                <h4 class="text-sm font-bold text-blue-900 uppercase tracking-wider mb-2">Core Principle: Guaranteed vs. Speculative Return</h4>
+                <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    A guaranteed 24% return does not exist in the stock market—<strong>except when you pay off a 24% credit card balance</strong>. Similarly, an instant 100% guaranteed return does not exist anywhere in global finance—<strong>except in an employer 401(k) match</strong>. The secret of financial independence is relentlessly prioritizing guaranteed high returns before chasing speculative market gains.
+                </p>
+            </div>
+
+            <!-- Deep Dive: Why Sequence Trumps Salary -->
+            <section class="space-y-4">
+                <h2 class="text-2xl font-bold text-slate-900">Why Sequence Matters More Than Raw Salary</h2>
+                <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+                    Personal finance is 20% head knowledge and 80% behavioral architecture. When money hits your bank account without a pre-ordained destination, Parkinson’s Law takes over: <em>expenditures naturally rise to meet income</em>. 
+                </p>
+                <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+                    Worse still, individuals frequently optimize the wrong variable. For instance, obsessing over finding a high-yield savings account paying an extra 0.25% APY on $3,000 (which yields roughly $7.50 a year) while ignoring a $6,000 credit card balance compounding at 24% (which destroys $1,440 a year in interest). The <strong>Financial Order of Operations (FOO)</strong> provides a non-negotiable filtering system that prevents these catastrophic financial misallocations.
+                </p>
+            </section>
+
+            <!-- AD PLACEMENT 2: In-Article 1 (After first 2-3 sections) -->
+            <div id="pf101-ad-slot-in-article-1" class="ad-placement-container my-8 w-full">
+                <div class="p-3 bg-slate-50 border border-slate-200/80 rounded-2xl text-center shadow-2xs">
+                    <span class="block text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1.5">Advertisement</span>
+                    <div class="ad-slot-placeholder w-full min-h-[120px] flex flex-col items-center justify-center border border-dashed border-slate-300 rounded-xl bg-white/70 text-slate-400 text-xs py-4 px-4">
+                        <!-- Google AdSense In-Article Native Unit:
+                             <ins class="adsbygoogle"
+                                  style="display:block; text-align:center;"
+                                  data-ad-layout="in-article"
+                                  data-ad-format="fluid"
+                                  data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                                  data-ad-slot="XXXXXXXXXX"></ins>
+                             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        -->
+                        <div class="flex items-center gap-2 text-slate-600 font-semibold text-xs">
+                            <i data-lucide="newspaper" class="w-4 h-4 text-slate-400"></i>
+                            <span>In-Article Native Ad Unit</span>
+                        </div>
+                        <span class="text-[10px] text-slate-400 mt-0.5">Google AdSense Ready • ID: pf101-in-article-1</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The 7 Sequential Steps -->
+            <section id="order-of-operations" class="space-y-8 pt-6 border-t border-slate-200">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">The 7-Step Financial Order of Operations</h2>
+
+                <!-- Step 1 -->
+                <div id="step-1" class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-200/60">Step 1: Survival Liquidity</span>
+                        <span class="text-xs text-slate-400">Target: $1,000 – $2,000</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">The $1,000 Starter Emergency Buffer</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Before investing a single dime or accelerating debt payoff, you must establish an emergency shock absorber. Without this initial cash buffer, the very first flat tire, urgent dental filling, or appliance breakdown will force you straight back to borrowing at 24% APR on credit cards.
+                    </p>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 space-y-2">
+                        <span class="font-bold text-slate-900 block">Execution Checklist:</span>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Open a separate High-Yield Savings Account (HYSA) at a bank different from your daily checking account to eliminate impulse spending.</li>
+                            <li>Deposit $1,000 ($2,000 if supporting dependents or operating an older vehicle).</li>
+                            <li>Do not touch this money for vacations, holidays, or predictable annual expenses.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div id="step-2" class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-50 text-blue-700 border border-blue-200/60">Step 2: Free Money</span>
+                        <span class="text-xs text-slate-400">Target: 100% of Match</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Capture the Full Employer 401(k) / 403(b) Match</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        If your employer offers a retirement contribution match (e.g., 50% match up to 6% of your salary, or dollar-for-dollar up to 4%), contributing up to that exact match threshold is mandatory. This is part of your total compensation package; refusing to capture it is identical to handing a portion of your salary back to your employer.
+                    </p>
+                    <div class="p-4 rounded-xl bg-blue-50 border border-blue-200 text-xs text-blue-900">
+                        <strong>The Mathematics:</strong> If you earn $60,000 and your company matches 100% up to 4%, contributing $2,400 of your money triggers an instantaneous $2,400 corporate addition. That is an immediate <strong>100% return on investment</strong> on Day 1—unmatched by any stock, real estate, or venture investment on Earth.
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div id="step-3" class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-red-50 text-red-700 border border-red-200/60">Step 3: Financial Toxic Waste</span>
+                        <span class="text-xs text-slate-400">Target: $0 Balance</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Aggressively Obliterate High-Interest Debt (>7% APR)</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Debts with interest rates exceeding 7%—especially credit cards averaging 21%–28% APR, payday advances, and high-interest unsecured personal loans—are financial emergencies. At a 24% interest rate, a balance doubles every three years under the Rule of 72.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50">
+                            <span class="font-bold text-emerald-700 block mb-1">Debt Avalanche (Mathematical)</span>
+                            Order debts by interest rate (highest APR first). Pay minimums on all, throw every spare dollar at the highest interest rate. Mathematically minimizes total interest paid.
+                        </div>
+                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50">
+                            <span class="font-bold text-blue-700 block mb-1">Debt Snowball (Behavioral)</span>
+                            Order debts by balance (smallest balance first). Knocking out small accounts creates immediate dopamine wins and reduces the sheer quantity of bills you track each month.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AD PLACEMENT 4: In-Article 2 (Middle of Article) -->
+                <div id="pf101-ad-slot-in-article-2" class="ad-placement-container my-8 w-full">
+                    <div class="p-3 bg-slate-50 border border-slate-200/80 rounded-2xl text-center shadow-2xs">
+                        <span class="block text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1.5">Advertisement</span>
+                        <div class="ad-slot-placeholder w-full min-h-[120px] flex flex-col items-center justify-center border border-dashed border-slate-300 rounded-xl bg-white/70 text-slate-400 text-xs py-4 px-4">
+                            <!-- Google AdSense Mid-Article Banner:
+                                 <ins class="adsbygoogle"
+                                      style="display:block"
+                                      data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                                      data-ad-slot="XXXXXXXXXX"
+                                      data-ad-format="auto"
+                                      data-full-width-responsive="true"></ins>
+                                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                            -->
+                            <div class="flex items-center gap-2 text-slate-600 font-semibold text-xs">
+                                <i data-lucide="newspaper" class="w-4 h-4 text-slate-400"></i>
+                                <span>Mid-Article Responsive Ad Unit</span>
+                            </div>
+                            <span class="text-[10px] text-slate-400 mt-0.5">Google AdSense Ready • ID: pf101-in-article-2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div id="step-4" class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-50 text-amber-700 border border-amber-200/60">Step 4: Ironclad Fortress</span>
+                        <span class="text-xs text-slate-400">Target: 3–6 Months Living Expenses</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Expand Emergency Buffer to a Full 3–6 Month Safety Net</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        With toxic debt extinguished, return to your emergency fund and scale it from the starter buffer to a full 3 to 6 months of baseline living expenses. Baseline expenses mean your <em>essential survival costs</em> (rent/mortgage, utilities, essential groceries, healthcare, minimum debt obligations), not your lifestyle spending.
+                    </p>
+                </div>
+
+                <!-- Step 5, 6, 7 -->
+                <div id="step-5" class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-50 text-purple-700 border border-purple-200/60">Step 5, 6 & 7: Wealth Acceleration</span>
+                        <span class="text-xs text-slate-400">Target: Max HSA, IRA & Brokerage</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Fund the Tax-Advantaged Trifecta (HSA + Roth IRA + 401k)</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Max out the Triple-Tax-Advantaged Health Savings Account (HSA) if enrolled in an HDHP, maximize your annual Roth IRA ($7,000+), and increase 401(k) contributions up toward the legal annual maximum ($23,500+). Once tax shelters are saturated, redirect remaining surplus into broad-market index funds (VTI / VOO) within a standard taxable brokerage account.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Case Study Comparison -->
+            <section id="case-study" class="space-y-6 pt-6 border-t border-slate-200">
+                <h2 class="text-2xl font-bold text-slate-900">Case Study: Sarah vs. Mark (10-Year Trajectory)</h2>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Consider two 28-year-old colleagues earning identical $75,000 salaries with $600/month of free cash flow and $8,000 of credit card debt at 22% APR:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                        <span class="font-bold text-red-600 text-sm block">Mark: Disordered Allocation</span>
+                        <p class="text-slate-600">Mark starts investing in stocks immediately with $400/month while only paying minimums on his credit card.</p>
+                        <ul class="list-disc pl-4 space-y-1 text-slate-500 pt-2">
+                            <li>Credit card interest compounds at 22%, destroying over $1,600/year.</li>
+                            <li>Car repair forces a second credit card in Year 2 due to zero cash buffer.</li>
+                            <li>After 10 years, Mark is still battling debt, with net worth under $28,000.</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-blue-50/60 border border-blue-200 space-y-2">
+                        <span class="font-bold text-blue-700 text-sm block">Sarah: The Financial Order of Operations</span>
+                        <p class="text-slate-600">Sarah puts $1,000 in a starter buffer, captures her 401(k) match, and attacks debt with $600/month.</p>
+                        <ul class="list-disc pl-4 space-y-1 text-slate-600 pt-2">
+                            <li>Credit card 100% paid off in 16 months, saving $3,200 in interest.</li>
+                            <li>Surplus redirects into emergency savings and a Roth IRA.</li>
+                            <li>After 10 years, Sarah has zero debt and an investment portfolio exceeding <strong>$164,000</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Step Audit Checklist -->
+            <section id="interactive-checklist" class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center">
+                        <i data-lucide="check-square" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900">Interactive Order of Operations Audit</h3>
+                        <span class="text-xs text-slate-500">Check off your completed milestones to find your current focus:</span>
+                    </div>
+                </div>
+
+                <div class="space-y-3 pt-2">
+                    <label class="flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition shadow-2xs">
+                        <input type="checkbox" class="mt-1 w-4 h-4 text-blue-600 rounded">
+                        <div>
+                            <span class="text-sm font-bold text-slate-900 block">Step 1: $1,000 Starter Emergency Fund</span>
+                            <span class="text-xs text-slate-500">Liquid in an FDIC-insured high-yield savings account.</span>
+                        </div>
+                    </label>
+
+                    <label class="flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition shadow-2xs">
+                        <input type="checkbox" class="mt-1 w-4 h-4 text-blue-600 rounded">
+                        <div>
+                            <span class="text-sm font-bold text-slate-900 block">Step 2: Captured Full Employer 401(k) Match</span>
+                            <span class="text-xs text-slate-500">Leaving zero free compensation on the table.</span>
+                        </div>
+                    </label>
+
+                    <label class="flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition shadow-2xs">
+                        <input type="checkbox" class="mt-1 w-4 h-4 text-blue-600 rounded">
+                        <div>
+                            <span class="text-sm font-bold text-slate-900 block">Step 3: Zero High-Interest Debt (>7% APR)</span>
+                            <span class="text-xs text-slate-500">All revolving credit cards and high-rate loans cleared.</span>
+                        </div>
+                    </label>
+
+                    <label class="flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition shadow-2xs">
+                        <input type="checkbox" class="mt-1 w-4 h-4 text-blue-600 rounded">
+                        <div>
+                            <span class="text-sm font-bold text-slate-900 block">Step 4: 3 to 6 Month Emergency Fortress</span>
+                            <span class="text-xs text-slate-500">Bare-bones survival buffer fully funded in an HYSA.</span>
+                        </div>
+                    </label>
+
+                    <label class="flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition shadow-2xs">
+                        <input type="checkbox" class="mt-1 w-4 h-4 text-blue-600 rounded">
+                        <div>
+                            <span class="text-sm font-bold text-slate-900 block">Step 5: Maxed HSA and Roth IRA</span>
+                            <span class="text-xs text-slate-500">Taking full advantage of tax-free compound growth.</span>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Traps & Pitfalls -->
+            <section id="pitfalls" class="space-y-4 pt-6 border-t border-slate-200">
+                <h2 class="text-2xl font-bold text-slate-900">5 Costly Traps to Avoid</h2>
+                <div class="space-y-3 text-xs sm:text-sm text-slate-700">
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                        <strong class="text-slate-900 block mb-1">1. Lifestyle Inflation (Creep):</strong>
+                        When you receive a salary raise, automatically route 60% of the net increase into investments before it hits your checking account.
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                        <strong class="text-slate-900 block mb-1">2. Whole Life / Indexed Universal Life (IUL):</strong>
+                        Whole life policies carry steep commissions and surrender charges. For 99% of people, buying cheap <strong>Term Life Insurance</strong> and investing the difference yields vastly superior net worth.
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                        <strong class="text-slate-900 block mb-1">3. Carrying a Credit Card Balance to "Build Credit":</strong>
+                        A complete financial myth. You never need to pay interest to build an exceptional 800+ credit score. Always pay statement balances in full.
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq" class="space-y-6 pt-6 border-t border-slate-200">
+                <h2 class="text-2xl font-bold text-slate-900">Frequently Asked Questions</h2>
+                <div class="space-y-4 text-xs sm:text-sm">
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                        <h4 class="font-bold text-slate-900">Should I pay off my student loans or invest in a Roth IRA?</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            If your fixed federal student loans have an APR below 4%–5%, investing in broad index funds (historically averaging 8%–10% annual returns) mathematically yields higher net worth. If your loans are private or exceed 7% APR, treat them like toxic debt and eliminate them aggressively.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-2">
+                        <h4 class="font-bold text-slate-900">What if I earn too much to contribute to a Roth IRA?</h4>
+                        <p class="text-slate-600 leading-relaxed">
+                            Execute a <strong>Backdoor Roth IRA</strong>: make a non-deductible contribution to a Traditional IRA, then immediately execute a tax-free conversion into a Roth IRA.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Primary Authoritative References & Citations -->
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 my-8">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 flex items-center gap-2">
+                    <i data-lucide="book-marked" class="w-4 h-4 text-blue-600"></i>
+                    <span>Primary Authoritative References & Empirical Sources</span>
+                </h4>
+                <ul class="text-xs text-slate-600 space-y-2 list-disc pl-5 leading-relaxed">
+                    <li><strong>Federal Reserve System:</strong> Consumer Credit (G.19) Monthly Aggregate Data and Survey of Consumer Finances (SCF), benchmarking debt-to-income and household emergency cash liquidity.</li>
+                    <li><strong>Internal Revenue Service (IRS):</strong> IRS Notice 2023-75 & Publication 590-A, defining standard elective deferral limits for 401(k), 403(b), Traditional IRA, and Roth IRA phase-outs.</li>
+                    <li><strong>Consumer Financial Protection Bureau (CFPB):</strong> Truth in Lending Act (TILA) Regulation Z guidelines regarding compound APR amortization structures.</li>
+                    <li><strong>Department of the Treasury / FDIC:</strong> Federal Deposit Insurance Corporation (FDIC) liquidity preservation guidelines for consumer transaction and high-yield reserve accounts.</li>
+                </ul>
+            </div>
+
+            <!-- AD PLACEMENT 5: Bottom Banner (728x90 Desktop, Responsive Mobile) -->
+            <div id="pf101-ad-slot-bottom-banner" class="ad-placement-container my-8 w-full">
+                <div class="max-w-[728px] mx-auto p-3 bg-slate-50 border border-slate-200/80 rounded-2xl text-center shadow-2xs">
+                    <span class="block text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-1.5">Advertisement</span>
+                    <div class="ad-slot-placeholder w-full min-h-[90px] flex flex-col items-center justify-center border border-dashed border-slate-300 rounded-xl bg-white/70 text-slate-400 text-xs py-3 px-4">
+                        <!-- Google AdSense Bottom Leaderboard:
+                             <ins class="adsbygoogle"
+                                  style="display:block"
+                                  data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                                  data-ad-slot="XXXXXXXXXX"
+                                  data-ad-format="auto"
+                                  data-full-width-responsive="true"></ins>
+                             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        -->
+                        <div class="flex items-center gap-2 text-slate-600 font-semibold text-xs">
+                            <i data-lucide="layout" class="w-4 h-4 text-slate-400"></i>
+                            <span>Bottom Leaderboard Ad Unit (728x90)</span>
+                        </div>
+                        <span class="text-[10px] text-slate-400 mt-0.5">Google AdSense Ready • ID: pf101-bottom-banner</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Navigation Bar -->
+            <div class="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <a href="../index.html" class="text-xs font-semibold text-slate-500 hover:text-blue-600 flex items-center gap-1">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    <span>Back to Hub</span>
+                </a>
+                <div class="flex gap-3">
+                    <a href="budgeting-methods.html" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-1 shadow-2xs">
+                        <span>Next: Budgeting Methods Compared</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- Comprehensive Universal Footer -->
+    <footer class="bg-slate-50 border-t border-slate-200 mt-20 pt-16 pb-12 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center p-1">
+                            <svg viewBox="0 0 64 64" fill="none" class="w-full h-full">
+                                <rect x="12" y="36" width="6" height="16" rx="3" fill="#2563eb" fill-opacity="0.3"/>
+                                <rect x="22" y="28" width="6" height="24" rx="3" fill="#2563eb" fill-opacity="0.5"/>
+                                <rect x="32" y="20" width="6" height="32" rx="3" fill="#2563eb" fill-opacity="0.7"/>
+                                <rect x="42" y="14" width="6" height="38" rx="3" fill="#059669" fill-opacity="0.9"/>
+                                <path d="M10 38 L20 38 L26 22 L32 46 L38 28 L44 38 L54 38" stroke="#10b981" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-black text-slate-900">Wealth<span class="text-blue-600">Pulse</span></span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Practical personal finance guides, decision frameworks, and live calculation tools designed to bring calm to everyday money decisions.
+                    </p>
+                    <div class="text-[11px] text-slate-400">
+                        Inquiries: <a href="mailto:contact@wealthpulse.app" class="underline hover:text-blue-600">contact@wealthpulse.app</a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Topic Hubs -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Topic Hubs</h5>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="personal-finance-101.html" class="hover:text-blue-600 font-semibold text-blue-600">Personal Finance 101</a></li>
+                        <li><a href="budgeting-methods.html" class="hover:text-blue-600">Budgeting & Cash Flow</a></li>
+                        <li><a href="emergency-fund.html" class="hover:text-blue-600">Emergency Fund Strategies</a></li>
+                        <li><a href="debt-payoff-strategies.html" class="hover:text-blue-600">Debt Payoff Playbooks</a></li>
+                        <li><a href="credit-scores.html" class="hover:text-blue-600">Credit Score Mechanics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Calculators -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Calculators & Tools</h5>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="../calculators.html#budget-calculator" class="hover:text-blue-600">50/30/20 Budget Calculator</a></li>
+                        <li><a href="../calculators.html#compound-calculator" class="hover:text-blue-600">Compound Interest Simulator</a></li>
+                        <li><a href="../calculators.html#debt-simulator" class="hover:text-blue-600">Debt Snowball vs Avalanche</a></li>
+                        <li><a href="../calculators.html#emergency-planner" class="hover:text-blue-600">Emergency Fund Tracker</a></li>
+                        <li><a href="../index.html#quiz-section" class="hover:text-blue-600">Financial Health Checkup</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Trust & Transparency -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Trust & Policies</h5>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="../about.html" class="hover:text-blue-600">About WealthPulse</a></li>
+                        <li><a href="../editorial-policy.html" class="hover:text-blue-600">Editorial Policy & Research</a></li>
+                        <li><a href="../disclaimer.html" class="hover:text-blue-600">Financial Disclaimer</a></li>
+                        <li><a href="../privacy-policy.html" class="hover:text-blue-600">Privacy Policy (AdSense)</a></li>
+                        <li><a href="../cookie-policy.html" class="hover:text-blue-600">Cookie Policy</a></li>
+                        <li><a href="../terms.html" class="hover:text-blue-600">Terms and Conditions</a></li>
+                        <li><a href="../affiliate-disclosure.html" class="hover:text-blue-600">Affiliate & Ad Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <span>&copy; 2026 WealthPulse Media. All rights reserved.</span>
+                <div class="flex flex-wrap gap-4 text-[11px]">
+                    <a href="../privacy-policy.html" class="hover:underline">Privacy Policy</a>
+                    <a href="../terms.html" class="hover:underline">Terms of Service</a>
+                    <a href="../disclaimer.html" class="hover:underline">Disclaimer</a>
+                    <a href="../editorial-policy.html" class="hover:underline">Editorial Policy</a>
+                    <a href="../cookie-policy.html" class="hover:underline">Cookie Policy</a>
+                    <a href="../affiliate-disclosure.html" class="hover:underline">Affiliate Disclosure</a>
+                    <a href="../contact.html" class="hover:underline">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('reading-progress').style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>

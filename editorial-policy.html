@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial Standards & Research Methodology | WealthPulse</title>
+    <meta name="description" content="Discover how WealthPulse researches financial topics, verifies mathematical simulation formulas, maintains editorial independence, and ensures data integrity.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        accent: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Newsreader', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & Lucide Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .font-serif-heading { font-family: 'Newsreader', Georgia, serif; }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased min-h-screen selection:bg-blue-100 selection:text-blue-900 flex flex-col justify-between">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center p-1.5 shadow-sm group-hover:scale-105 transition transform">
+                    <svg viewBox="0 0 64 64" fill="none" class="w-full h-full">
+                        <rect x="12" y="36" width="6" height="16" rx="3" fill="#2563eb" fill-opacity="0.3"/>
+                        <rect x="22" y="28" width="6" height="24" rx="3" fill="#2563eb" fill-opacity="0.5"/>
+                        <rect x="32" y="20" width="6" height="32" rx="3" fill="#2563eb" fill-opacity="0.7"/>
+                        <rect x="42" y="14" width="6" height="38" rx="3" fill="#059669" fill-opacity="0.9"/>
+                        <path d="M10 38 L20 38 L26 22 L32 46 L38 28 L44 38 L54 38" stroke="#10b981" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="38" cy="28" r="3.5" fill="#38bdf8"/>
+                        <circle cx="44" cy="38" r="2.5" fill="#ffffff"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="text-2xl font-black tracking-tight text-slate-900 flex items-center">
+                        Wealth<span class="text-blue-600">Pulse</span>
+                    </span>
+                    <span class="block text-[10px] uppercase font-bold tracking-widest text-slate-500 -mt-1">Everyday Money, Elevated</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="index.html#categories" class="hover:text-blue-600 transition">Categories</a>
+                <a href="calculators.html" class="hover:text-blue-600 transition">Calculators</a>
+                <a href="about.html" class="hover:text-blue-600 transition">About Us</a>
+                <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-xl shadow-xs transition">
+                    Explore Platform
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-16 flex-1 space-y-12">
+        <div class="space-y-3 border-b border-slate-200 pb-8">
+            <div class="flex items-center gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Editorial Integrity & E-E-A-T</span>
+                <span class="text-xs text-slate-400">Current Revision: November 2026</span>
+            </div>
+            <h1 class="font-serif-heading text-4xl sm:text-5xl font-normal text-slate-900">
+                Editorial Standards & Research Policy
+            </h1>
+            <p class="text-base text-slate-600 leading-relaxed">
+                Personal finance decisions directly influence family security, stress levels, and long-term wellbeing. At WealthPulse, we hold our research, mathematical formulas, and masterclass publications to strict standards of empirical verification, clarity, and commercial independence.
+            </p>
+        </div>
+
+        <!-- 4 Pillars -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
+                    <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">Primary Authoritative Sources</h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    We rely directly on primary empirical databases: the Federal Reserve Economic Data (FRED), the Internal Revenue Service (IRS), the Consumer Financial Protection Bureau (CFPB), and academic behavioral finance research.
+                </p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+                    <i data-lucide="calculator" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">Mathematical Verification</h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Every calculator model (50/30/20 proportions, amortized interest curves, compound return schedules) is cross-tested against closed-form financial algebra prior to deployment.
+                </p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold">
+                    <i data-lucide="shield-alert" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">Zero Predatory Loan Products</h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    We maintain an absolute ban on advertising or promoting high-interest payday lenders, subprime debt traps, speculative crypto memecoins, or get-rich-quick courses.
+                </p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
+                    <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">Continuous Update Cadence</h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    When federal retirement limits change or landmark economic data is revised, our guides and calculators are updated immediately, with public last-reviewed date stamps.
+                </p>
+            </div>
+        </div>
+
+        <div class="space-y-10 text-sm text-slate-700 leading-relaxed">
+
+            <!-- Section 1: Methodology -->
+            <section class="space-y-3">
+                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">1</span>
+                    Topic Selection & Research Methodology
+                </h2>
+                <p>
+                    Topics are selected based on high-impact financial milestones faced by everyday earners: escaping high-interest credit card debt, structuring a functional household budget, building emergency liquid cash reserves, and understanding workplace retirement matching.
+                </p>
+                <p>
+                    Rather than publishing speculative hype or short commentary, our editorial team produces exhaustive, structured masterclasses that walk readers through mathematical foundations, step-by-step sequences, interactive audits, and common behavioral failure modes.
+                </p>
+            </section>
+
+            <!-- Section 2: Separation of Content and Ads -->
+            <section class="space-y-3 p-6 rounded-3xl bg-slate-50 border border-slate-200">
+                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-lg bg-blue-600 text-white flex items-center justify-center text-xs font-bold">2</span>
+                    Editorial Independence & Advertising Separation
+                </h2>
+                <p>
+                    WealthPulse operates with strict division between our editorial content and monetization channels:
+                </p>
+                <ul class="list-disc pl-6 space-y-1">
+                    <li><strong>No Sponsored Bias:</strong> Advertisers have zero advance review privileges and cannot influence the outcome of our calculators, editorial conclusions, or comparison frameworks.</li>
+                    <li><strong>Clear Ad Demarcation:</strong> All advertisement slots served via Google AdSense are explicitly identified with an uppercase "ADVERTISEMENT" label and framed with distinct boundaries to ensure readers never mistake commercial messaging for unbiased editorial instruction.</li>
+                    <li><strong>No Manipulative Rankings:</strong> Financial products are never ordered based on commercial payout.</li>
+                </ul>
+            </section>
+
+            <!-- Section 3: Corrections Policy -->
+            <section class="space-y-3">
+                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">3</span>
+                    Public Corrections & Feedback Protocol
+                </h2>
+                <p>
+                    Despite rigorous editorial checks, tax codes evolve and computational nuances arise. When an error is identified:
+                </p>
+                <ul class="list-disc pl-6 space-y-1">
+                    <li>Our team reviews the empirical primary source within 24 hours.</li>
+                    <li>If an error is verified, the article or calculator algorithm is amended immediately.</li>
+                    <li>An explicit correction notice is added to the article or changelog detailing what was updated and when.</li>
+                </ul>
+                <p>
+                    To submit a correction or report a calculation edge case, contact our team directly at <a href="mailto:editorial@wealthpulse.app" class="text-blue-600 font-bold underline">editorial@wealthpulse.app</a>.
+                </p>
+            </section>
+
+            <!-- Section 4: The Research Desk -->
+            <section class="space-y-3">
+                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">4</span>
+                    The WealthPulse Research & Editorial Collective
+                </h2>
+                <p>
+                    WealthPulse content is produced by a collaborative desk of personal finance researchers, quantitative analysts, and financial educators who specialize in consumer financial literacy, debt amortization modeling, and algorithmic web development.
+                </p>
+                <p>
+                    We do not publish fabricated persona bios or synthetic celebrity endorsements. Every guide represents authentic collective research, verified formulas, and human editorial review.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Comprehensive Universal Footer -->
+    <footer class="bg-slate-50 border-t border-slate-200 mt-20 pt-16 pb-12 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center p-1">
+                            <svg viewBox="0 0 64 64" fill="none" class="w-full h-full">
+                                <rect x="12" y="36" width="6" height="16" rx="3" fill="#2563eb" fill-opacity="0.3"/>
+                                <rect x="22" y="28" width="6" height="24" rx="3" fill="#2563eb" fill-opacity="0.5"/>
+                                <rect x="32" y="20" width="6" height="32" rx="3" fill="#2563eb" fill-opacity="0.7"/>
+                                <rect x="42" y="14" width="6" height="38" rx="3" fill="#059669" fill-opacity="0.9"/>
+                                <path d="M10 38 L20 38 L26 22 L32 46 L38 28 L44 38 L54 38" stroke="#10b981" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-black text-slate-900">Wealth<span class="text-blue-600">Pulse</span></span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Practical personal finance guides, decision frameworks, and live calculation tools designed to bring calm to everyday money decisions.
+                    </p>
+                    <div class="text-[11px] text-slate-400">
+                        Inquiries: <a href="mailto:contact@wealthpulse.app" class="underline hover:text-blue-600">contact@wealthpulse.app</a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Topic Hubs -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Topic Hubs</h5>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="guides/personal-finance-101.html" class="hover:text-blue-600">Personal Finance 101</a></li>
+                        <li><a href="guides/budgeting-methods.html" class="hover:text-blue-600">Budgeting & Cash Flow</a></li>
+                        <li><a href="guides/emergency-fund.html" class="hover:text-blue-600">Emergency Fund Strategies</a></li>
+                        <li><a href="guides/debt-payoff-strategies.html" class="hover:text-blue-600">Debt Payoff Playbooks</a></li>
+                        <li><a href="guides/credit-scores.html" class="hover:text-blue-600">Credit Score Mechanics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Calculators -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Calculators & Tools</h5>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="calculators.html#budget-calculator" class="hover:text-blue-600">50/30/20 Budget Calculator</a></li>
+                        <li><a href="calculators.html#compound-calculator" class="hover:text-blue-600">Compound Interest Simulator</a></li>
+                        <li><a href="calculators.html#debt-simulator" class="hover:text-blue-600">Debt Snowball vs Avalanche</a></li>
+                        <li><a href="calculators.html#emergency-planner" class="hover:text-blue-600">Emergency Fund Tracker</a></li>
+                        <li><a href="index.html#quiz-section" class="hover:text-blue-600">Financial Health Checkup</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Trust & Transparency -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Trust & Policies</h5>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="about.html" class="hover:text-blue-600">About WealthPulse</a></li>
+                        <li><a href="editorial-policy.html" class="hover:text-blue-600 font-bold">Editorial Policy & Research</a></li>
+                        <li><a href="disclaimer.html" class="hover:text-blue-600">Financial Disclaimer</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-blue-600">Privacy Policy (AdSense)</a></li>
+                        <li><a href="cookie-policy.html" class="hover:text-blue-600">Cookie Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-blue-600">Terms and Conditions</a></li>
+                        <li><a href="affiliate-disclosure.html" class="hover:text-blue-600">Affiliate & Ad Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <span>&copy; 2026 WealthPulse Media. All rights reserved.</span>
+                <div class="flex flex-wrap gap-4 text-[11px]">
+                    <a href="privacy-policy.html" class="hover:underline">Privacy Policy</a>
+                    <a href="terms.html" class="hover:underline">Terms of Service</a>
+                    <a href="disclaimer.html" class="hover:underline">Disclaimer</a>
+                    <a href="editorial-policy.html" class="hover:underline font-bold text-slate-600">Editorial Policy</a>
+                    <a href="cookie-policy.html" class="hover:underline">Cookie Policy</a>
+                    <a href="affiliate-disclosure.html" class="hover:underline">Affiliate Disclosure</a>
+                    <a href="contact.html" class="hover:underline">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

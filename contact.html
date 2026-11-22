@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us & Editorial Desk | WealthPulse</title>
+    <meta name="description" content="Get in touch with the WealthPulse editorial team, report a calculator issue, or submit a financial topic request.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        accent: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Newsreader', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & Lucide Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .font-serif-heading { font-family: 'Newsreader', Georgia, serif; }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased min-h-screen selection:bg-blue-100 selection:text-blue-900 flex flex-col justify-between">
+
+    <!-- Top Notice Banner -->
+    <div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 text-center font-medium flex items-center justify-center gap-2 border-b border-slate-800">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span>WealthPulse Editorial Desk • Direct Inquiries & Computational Model Feedback</span>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center p-1.5 shadow-sm group-hover:scale-105 transition transform">
+                    <svg viewBox="0 0 64 64" fill="none" class="w-full h-full">
+                        <rect x="12" y="36" width="6" height="16" rx="3" fill="#2563eb" fill-opacity="0.3"/>
+                        <rect x="22" y="28" width="6" height="24" rx="3" fill="#2563eb" fill-opacity="0.5"/>
+                        <rect x="32" y="20" width="6" height="32" rx="3" fill="#2563eb" fill-opacity="0.7"/>
+                        <rect x="42" y="14" width="6" height="38" rx="3" fill="#059669" fill-opacity="0.9"/>
+                        <path d="M10 38 L20 38 L26 22 L32 46 L38 28 L44 38 L54 38" stroke="#10b981" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="38" cy="28" r="3.5" fill="#38bdf8"/>
+                        <circle cx="44" cy="38" r="2.5" fill="#ffffff"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="text-2xl font-black tracking-tight text-slate-900 flex items-center">
+                        Wealth<span class="text-blue-600">Pulse</span>
+                    </span>
+                    <span class="block text-[10px] uppercase font-bold tracking-widest text-slate-500 -mt-1">Everyday Money, Elevated</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="index.html#categories" class="hover:text-blue-600 transition">Categories</a>
+                <a href="calculators.html" class="hover:text-blue-600 transition">Calculators</a>
+                <a href="about.html" class="hover:text-blue-600 transition">About Us</a>
+                <a href="contact.html" class="text-blue-600 font-bold">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-xl shadow-xs transition">
+                    Explore Platform
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-16 flex-1 space-y-12">
+        <div class="text-center max-w-2xl mx-auto space-y-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">Direct Communication</span>
+            <h1 class="font-serif-heading text-4xl sm:text-5xl font-normal text-slate-900">
+                Contact the WealthPulse Desk
+            </h1>
+            <p class="text-base text-slate-600 leading-relaxed">
+                We welcome inquiries, empirical formula questions, calculator bug reports, and editorial feedback. Our team reviews every message directly.
+            </p>
+        </div>
+
+        <!-- Contact Channels Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-blue-300 transition">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-base font-bold text-slate-900 mb-1">Editorial & Research</h3>
+                <p class="text-xs text-slate-500 mb-3">For guide feedback, source corrections, and topic suggestions.</p>
+                <a href="mailto:editorial@wealthpulse.app" class="text-xs font-bold text-blue-600 hover:underline flex items-center gap-1">
+                    editorial@wealthpulse.app &rarr;
+                </a>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-emerald-300 transition">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
+                    <i data-lucide="calculator" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-base font-bold text-slate-900 mb-1">Calculator & Tool Feedback</h3>
+                <p class="text-xs text-slate-500 mb-3">Report calculation discrepancies or suggest new simulation models.</p>
+                <a href="mailto:tools@wealthpulse.app" class="text-xs font-bold text-emerald-600 hover:underline flex items-center gap-1">
+                    tools@wealthpulse.app &rarr;
+                </a>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-purple-300 transition">
+                <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-4">
+                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-base font-bold text-slate-900 mb-1">Privacy & Compliance</h3>
+                <p class="text-xs text-slate-500 mb-3">Questions regarding data protection, cookies, or our privacy terms.</p>
+                <a href="mailto:privacy@wealthpulse.app" class="text-xs font-bold text-purple-600 hover:underline flex items-center gap-1">
+                    privacy@wealthpulse.app &rarr;
+                </a>
+            </div>
+        </div>
+
+        <!-- Form and FAQ Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <!-- Contact Form -->
+            <div class="lg:col-span-7 p-6 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm">
+                <h2 class="text-xl font-bold text-slate-900 mb-1">Send Us a Direct Message</h2>
+                <p class="text-xs text-slate-500 mb-6">Fill in the details below. We typically respond within 24–48 business hours.</p>
+
+                <div id="contact-alert" class="hidden mb-6 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 font-semibold flex items-center gap-2">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i>
+                    <span>Thank you! Your message has been routed to our team. We will review it promptly.</span>
+                </div>
+
+                <form id="contact-form" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="text-xs font-bold text-slate-700 block mb-1">Your Name *</label>
+                            <input type="text" id="contact-name" required placeholder="Alex Morgan" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="text-xs font-bold text-slate-700 block mb-1">Email Address *</label>
+                            <input type="email" id="contact-email" required placeholder="alex@example.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="text-xs font-bold text-slate-700 block mb-1">Department / Inquiry Type *</label>
+                        <select id="contact-type" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="editorial">Editorial Inquiry / Guide Feedback</option>
+                            <option value="calculator">Calculator Bug Report or Formula Question</option>
+                            <option value="partnership">General Inquiries</option>
+                            <option value="privacy">Privacy / Cookie Policy Question</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="text-xs font-bold text-slate-700 block mb-1">Subject *</label>
+                        <input type="text" id="contact-subject" required placeholder="Inquiry topic..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+
+                    <div>
+                        <label class="text-xs font-bold text-slate-700 block mb-1">Message Details *</label>
+                        <textarea id="contact-message" required rows="5" placeholder="Please provide specific details or URLs if referring to a particular calculator or article..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+
+                    <!-- Anti-spam Honeypot field (hidden from genuine users) -->
+                    <div class="hidden" aria-hidden="true">
+                        <input type="text" name="website_url_hp" id="website_url_hp" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <button type="submit" class="w-full sm:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs transition shadow-sm flex items-center justify-center gap-2">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        <span>Transmit Message</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Side Information & Transparency -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200 space-y-4">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 flex items-center gap-2">
+                        <i data-lucide="clock" class="w-4 h-4 text-blue-600"></i>
+                        <span>Operational Transparency</span>
+                    </h3>
+                    <div class="space-y-3 text-xs text-slate-600 leading-relaxed">
+                        <p>
+                            <strong>Response Commitment:</strong> We answer all genuine readers, researchers, and calculator users within 2 business days.
+                        </p>
+                        <p>
+                            <strong>No Paid Dofollow Links:</strong> To uphold Google Search Quality guidelines and journalistic independence, WealthPulse does not accept paid guest posts, sponsored text links, or manipulative link schemes.
+                        </p>
+                        <p>
+                            <strong>Corrections Process:</strong> If you find any mathematical or factual discrepancy in any of our guides, please provide the specific formula citation so our research desk can verify and log an update.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-3xl bg-white border border-slate-200 space-y-3 shadow-xs">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900">Desk Address</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        <strong>WealthPulse Media Desk</strong><br>
+                        Digital Publishing & Computational Modeling Unit<br>
+                        Email: <a href="mailto:contact@wealthpulse.app" class="text-blue-600 underline">contact@wealthpulse.app</a><br>
+                        Operating Hours: Monday – Friday, 9:00 AM – 5:00 PM EST
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Comprehensive Universal Footer -->
+    <footer class="bg-slate-50 border-t border-slate-200 mt-20 pt-16 pb-12 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center p-1">
+                            <svg viewBox="0 0 64 64" fill="none" class="w-full h-full">
+                                <rect x="12" y="36" width="6" height="16" rx="3" fill="#2563eb" fill-opacity="0.3"/>
+                                <rect x="22" y="28" width="6" height="24" rx="3" fill="#2563eb" fill-opacity="0.5"/>
+                                <rect x="32" y="20" width="6" height="32" rx="3" fill="#2563eb" fill-opacity="0.7"/>
+                                <rect x="42" y="14" width="6" height="38" rx="3" fill="#059669" fill-opacity="0.9"/>
+                                <path d="M10 38 L20 38 L26 22 L32 46 L38 28 L44 38 L54 38" stroke="#10b981" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-black text-slate-900">Wealth<span class="text-blue-600">Pulse</span></span>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Practical personal finance guides, decision frameworks, and live calculation tools designed to bring calm to everyday money decisions.
+                    </p>
+                    <div class="text-[11px] text-slate-400">
+                        Inquiries: <a href="mailto:contact@wealthpulse.app" class="underline hover:text-blue-600">contact@wealthpulse.app</a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Topic Hubs -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Topic Hubs</h5>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="guides/personal-finance-101.html" class="hover:text-blue-600">Personal Finance 101</a></li>
+                        <li><a href="guides/budgeting-methods.html" class="hover:text-blue-600">Budgeting & Cash Flow</a></li>
+                        <li><a href="guides/emergency-fund.html" class="hover:text-blue-600">Emergency Fund Strategies</a></li>
+                        <li><a href="guides/debt-payoff-strategies.html" class="hover:text-blue-600">Debt Payoff Playbooks</a></li>
+                        <li><a href="guides/credit-scores.html" class="hover:text-blue-600">Credit Score Mechanics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Calculators -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Calculators & Tools</h5>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="calculators.html#budget-calculator" class="hover:text-blue-600">50/30/20 Budget Calculator</a></li>
+                        <li><a href="calculators.html#compound-calculator" class="hover:text-blue-600">Compound Interest Simulator</a></li>
+                        <li><a href="calculators.html#debt-simulator" class="hover:text-blue-600">Debt Snowball vs Avalanche</a></li>
+                        <li><a href="calculators.html#emergency-planner" class="hover:text-blue-600">Emergency Fund Tracker</a></li>
+                        <li><a href="index.html#quiz-section" class="hover:text-blue-600">Financial Health Checkup</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Trust & Transparency -->
+                <div>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Trust & Policies</h5>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li><a href="about.html" class="hover:text-blue-600">About WealthPulse</a></li>
+                        <li><a href="editorial-policy.html" class="hover:text-blue-600">Editorial Policy & Research</a></li>
+                        <li><a href="disclaimer.html" class="hover:text-blue-600">Financial Disclaimer</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-blue-600">Privacy Policy (AdSense)</a></li>
+                        <li><a href="cookie-policy.html" class="hover:text-blue-600">Cookie Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-blue-600">Terms and Conditions</a></li>
+                        <li><a href="affiliate-disclosure.html" class="hover:text-blue-600">Affiliate & Ad Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <span>&copy; 2026 WealthPulse Media. All rights reserved.</span>
+                <div class="flex flex-wrap gap-4 text-[11px]">
+                    <a href="privacy-policy.html" class="hover:underline">Privacy Policy</a>
+                    <a href="terms.html" class="hover:underline">Terms of Service</a>
+                    <a href="disclaimer.html" class="hover:underline">Disclaimer</a>
+                    <a href="editorial-policy.html" class="hover:underline">Editorial Policy</a>
+                    <a href="cookie-policy.html" class="hover:underline">Cookie Policy</a>
+                    <a href="affiliate-disclosure.html" class="hover:underline">Affiliate Disclosure</a>
+                    <a href="contact.html" class="hover:underline">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const honeypot = document.getElementById('website_url_hp').value;
+                if (honeypot) return; // bot detected
+
+                document.getElementById('contact-alert').classList.remove('hidden');
+                contactForm.reset();
+                setTimeout(() => {
+                    document.getElementById('contact-alert').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            });
+        }
+    </script>
+</body>
+</html>
